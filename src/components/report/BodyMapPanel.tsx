@@ -57,9 +57,9 @@ const ZONE_MARKER_POSITION: Record<BodyZone, { left: string; top: string }> = {
  * match every other scale on the report, so the order here is reversed).
  */
 const SUBDIM_SCALE_COLOR: Array<{ dark: string; light: string }> = [
-  { dark: "#FF6173", light: "#8E1220" }, // unfavourable
-  { dark: "#4CAF6E", light: "#1E5631" }, // middle
-  { dark: "#99E4FF", light: "#12657F" }, // favourable
+  { dark: "#c2608a", light: "#7b2d5e" }, // unfavourable
+  { dark: "#3ba8b8", light: "#0d6a76" }, // middle
+  { dark: "#4a90c9", light: "#1d5fa8" }, // favourable
 ];
 
 interface SignalRow {
@@ -225,7 +225,7 @@ export const BodyMapPanel = ({
       {/* Full-body graphic with a marker per zone that has data. */}
       <div
         className="relative mx-auto mb-3 rounded-lg overflow-hidden"
-        style={{ backgroundColor: "#0B0B0A", maxWidth: 220 }}
+        style={{ backgroundColor: "#1b1510", maxWidth: 220 }}
       >
         <img src={bodyFull} alt="" className="w-full h-auto block" />
         {zonesWithData.map((zone) => {
@@ -241,10 +241,10 @@ export const BodyMapPanel = ({
                 width: 9,
                 height: 9,
                 transform: "translate(-50%, -50%)",
-                background: g.hasAbnormal ? "#FF6173" : "rgba(222,255,230,0.9)",
+                background: g.hasAbnormal ? "#c2608a" : "rgba(200,230,230,0.9)",
                 boxShadow: g.hasAbnormal
-                  ? "0 0 10px 3px rgba(255,97,115,0.6)"
-                  : "0 0 8px 3px rgba(222,255,230,0.4)",
+                  ? "0 0 10px 3px rgba(194,96,138,0.6)"
+                  : "0 0 8px 3px rgba(200,230,230,0.4)",
               }}
             />
           );
@@ -265,18 +265,18 @@ export const BodyMapPanel = ({
             >
               <div className="flex items-center gap-2 mb-1.5">
                 <img src={ZONE_ICON[zone]} alt="" className="w-6 h-6 opacity-90" />
-                <span className={`font-mono uppercase tracking-widest ${zoneNameSize} text-[#231200]`}>
+                <span className={`font-mono uppercase tracking-widest ${zoneNameSize} text-[#1b1510]`}>
                   {BODY_ZONE_LABEL[zone]}
                 </span>
                 {g.hasAbnormal && (
                   <span
                     className="w-1.5 h-1.5 rounded-full animate-gentle-blink"
-                    style={{ background: "#FF6173" }}
+                    style={{ background: "#c2608a" }}
                   />
                 )}
               </div>
 
-              <div className="flex flex-col gap-px bg-[#231200]/15 rounded-lg overflow-hidden">
+              <div className="flex flex-col gap-px bg-[#1b1510]/15 rounded-lg overflow-hidden">
                 {rows.map((row) => {
                   if (row.kind === "lab") {
                     return (
@@ -289,7 +289,7 @@ export const BodyMapPanel = ({
                         <span className={`font-mono uppercase tracking-wider ${labelSize}`}>{row.label}</span>
                         <span
                           className="font-mono text-[11px] font-semibold"
-                          style={{ color: row.isAbnormal ? "#FFC163" : "#4CAF6E" }}
+                          style={{ color: row.isAbnormal ? "#d9822f" : "#3ba8b8" }}
                         >
                           {row.value}
                         </span>
@@ -321,7 +321,7 @@ export const BodyMapPanel = ({
                         {row.kind === "signal" ? (
                           <span
                             className={`font-mono flex-shrink-0 ${isSeniorMode ? "text-xs" : "text-[10px]"}`}
-                            style={{ color: "#99E4FF" }}
+                            style={{ color: "#4a90c9" }}
                           >
                             {row.bandWord}
                           </span>

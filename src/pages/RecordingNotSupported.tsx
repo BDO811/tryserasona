@@ -97,7 +97,7 @@ export const RecordingNotSupported = ({ onBack }: RecordingNotSupportedProps) =>
           onClick={onBack}
           className="inline-flex items-center gap-3 px-8 py-4 rounded-lg font-mono text-sm uppercase tracking-widest font-semibold transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
           style={{
-            background: `linear-gradient(135deg, ${BRAND_COLOR} 0%, #00D4FF 100%)`,
+            background: `linear-gradient(135deg, ${BRAND_COLOR} 0%, #f2994a 100%)`,
             color: "#000",
             boxShadow: `0 4px 20px ${BRAND_COLOR}40`,
           }}

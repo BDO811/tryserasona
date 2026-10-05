@@ -183,7 +183,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
   const BUTTON_SIZE = isSeniorMode ? 168 : 120;
   const RING_SIZE = Math.round(BUTTON_SIZE * 0.85);
 
-  const accentColor = pathwayConfig?.color || "#1E5631";
+  const accentColor = pathwayConfig?.color || "#c2410c";
   const metadata = pathwayConfig?.metadata || {
     topLeft: { label: "FREQ", value: "SCAN" },
     topRight: { label: "HARM", value: "DETECT" },
@@ -721,7 +721,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
               {isRecording && (
                 <motion.p
                   className={getTextClasses(isSeniorMode, isHighVis, 'instruction')}
-                  style={{ color: '#1E5631' }}
+                  style={{ color: '#c2410c' }}
                   animate={{ opacity: [0.7, 1, 0.7] }}
                   transition={{ duration: 0.8, repeat: Infinity, ease: "easeInOut" }}
                 >
@@ -736,7 +736,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0 }}
                   className={getTextClasses(isSeniorMode, isHighVis, 'instruction')}
-                  style={{ color: '#B45309' }}
+                  style={{ color: '#a94e08' }}
                 >
                   {insufficientSpeechWarning}
                 </motion.p>
@@ -751,7 +751,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               className={getTextClasses(isSeniorMode, isHighVis, 'instruction')}
-              style={{ color: '#1E5631' }}
+              style={{ color: '#c2410c' }}
             >
               {t("processingResponses", language)}
             </motion.p>
@@ -778,7 +778,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
                 animate={{ scale, opacity }}
                 transition={{ duration: 0.1, ease: "linear" }}
                 style={{
-                  boxShadow: `0 0 ${10 * ripple.intensity}px rgba(30, 86, 49, ${opacity * 0.5})`
+                  boxShadow: `0 0 ${10 * ripple.intensity}px rgba(194, 65, 12, ${opacity * 0.5})`
                 }}
               />
             );
@@ -796,7 +796,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
             className="w-[120px] h-[120px] rounded-full border border-cyan-400/20"
             style={{
               transform: `rotate(${scannerRotation}deg)`,
-              background: `conic-gradient(from ${scannerRotation}deg, transparent 0deg, rgba(30, 86, 49, 0.15) 30deg, transparent 60deg)`
+              background: `conic-gradient(from ${scannerRotation}deg, transparent 0deg, rgba(194, 65, 12, 0.15) 30deg, transparent 60deg)`
             }}
           />
         </motion.div>
@@ -814,12 +814,12 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
               cy="50"
               r="46"
               fill="none"
-              stroke="#1E5631"
+              stroke="#c2410c"
               strokeWidth="2"
               strokeLinecap="round"
               strokeDasharray={2 * Math.PI * 46}
               strokeDashoffset={2 * Math.PI * 46 * (1 - recordingSecondsLeft / RECORDING_DURATION_SECONDS)}
-              style={{ filter: 'drop-shadow(0 0 6px rgba(30, 86, 49, 0.6))', transition: 'stroke-dashoffset 1s linear' }}
+              style={{ filter: 'drop-shadow(0 0 6px rgba(194, 65, 12, 0.6))', transition: 'stroke-dashoffset 1s linear' }}
             />
           </svg>
         )}
@@ -858,8 +858,8 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
           style={{
             width: BUTTON_SIZE,
             height: BUTTON_SIZE,
-            border: `1px solid ${isRecording ? '#1E5631' : 'rgba(0, 0, 0, 0.3)'}`,
-            backgroundColor: isRecording ? 'rgba(30, 86, 49, 0.15)' : '#FFFFFF',
+            border: `1px solid ${isRecording ? '#c2410c' : 'rgba(0, 0, 0, 0.3)'}`,
+            backgroundColor: isRecording ? 'rgba(194, 65, 12, 0.15)' : '#FFFFFF',
             transition: 'border-color 0.2s ease, background-color 0.2s ease',
             pointerEvents: isComplete ? 'none' : 'auto',
           }}
@@ -872,9 +872,9 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
             scale: isComplete ? 0.92 : 1,
             boxShadow: isRecording
               ? [
-                  '0 0 24px rgba(30, 86, 49, 0.55), 0 0 48px rgba(30, 86, 49, 0.3), inset 0 0 16px rgba(30, 86, 49, 0.15)',
-                  '0 0 44px rgba(30, 86, 49, 0.8), 0 0 88px rgba(30, 86, 49, 0.45), inset 0 0 22px rgba(30, 86, 49, 0.22)',
-                  '0 0 24px rgba(30, 86, 49, 0.55), 0 0 48px rgba(30, 86, 49, 0.3), inset 0 0 16px rgba(30, 86, 49, 0.15)',
+                  '0 0 24px rgba(194, 65, 12, 0.55), 0 0 48px rgba(194, 65, 12, 0.3), inset 0 0 16px rgba(194, 65, 12, 0.15)',
+                  '0 0 44px rgba(194, 65, 12, 0.8), 0 0 88px rgba(194, 65, 12, 0.45), inset 0 0 22px rgba(194, 65, 12, 0.22)',
+                  '0 0 24px rgba(194, 65, 12, 0.55), 0 0 48px rgba(194, 65, 12, 0.3), inset 0 0 16px rgba(194, 65, 12, 0.15)',
                 ]
               : '0 2px 20px rgba(0, 0, 0, 0.08)',
           }}
@@ -892,7 +892,7 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
             <motion.span
               key="timer"
               className={`font-mono font-bold ${isSeniorMode ? 'text-7xl' : 'text-6xl'}`}
-              style={{ color: '#1E5631' }}
+              style={{ color: '#c2410c' }}
               animate={{ opacity: [1, 0.6, 1] }}
               transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
             >
@@ -917,9 +917,9 @@ export const QuestionFlowVisualizer = ({ onComplete }: QuestionFlowVisualizerPro
             className="w-2 h-2 rounded-full transition-colors duration-300"
             style={{
               backgroundColor: index < currentQuestion 
-                ? '#1E5631' 
+                ? '#c2410c' 
                 : index === currentQuestion 
-                  ? 'rgba(30, 86, 49, 0.5)' 
+                  ? 'rgba(194, 65, 12, 0.5)' 
                   : 'rgba(0, 0, 0, 0.2)'
             }}
           />

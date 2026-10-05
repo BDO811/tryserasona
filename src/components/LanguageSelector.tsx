@@ -18,13 +18,13 @@ export const LanguageSelector = ({ onComplete }: LanguageSelectorProps) => {
   };
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center p-4 z-10 overflow-hidden" style={{ backgroundColor: "#DBCCB1" }}>
+    <div className="absolute inset-0 flex items-center justify-center p-4 z-10 overflow-hidden" style={{ backgroundColor: "#fbf7f1" }}>
       {/* Background photo at low opacity */}
       <div
         className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{ backgroundImage: `url(${asset("images/voice-conversation.jpg")})` }}
       />
-      <div className="absolute inset-0" style={{ backgroundColor: "#DBCCB1", opacity: 0.4 }} />
+      <div className="absolute inset-0" style={{ backgroundColor: "#fbf7f1", opacity: 0.4 }} />
 
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -35,13 +35,13 @@ export const LanguageSelector = ({ onComplete }: LanguageSelectorProps) => {
         {/* Chrome Headers */}
         <div className="flex items-center justify-between mb-8">
           <img src={asset("brand/swara-mark-paper.svg")} alt="Swara" className="h-10 w-auto" />
-          <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#DBCCB1]/90">
+          <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#fbf7f1]/90">
             SWARA // 2026
           </span>
         </div>
 
         {/* Title */}
-        <h1 className="font-serif text-3xl md:text-4xl text-center text-[#DBCCB1] leading-snug italic mb-10">
+        <h1 className="font-serif text-3xl md:text-4xl text-center text-[#fbf7f1] leading-snug italic mb-10">
           {t("selectLanguage", "en")}
         </h1>
 
@@ -53,9 +53,9 @@ export const LanguageSelector = ({ onComplete }: LanguageSelectorProps) => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => handleSelect(option.id)}
-              className="w-full px-[19.2px] py-4 rounded-full border border-[#DBCCB1]/20 bg-white/5 hover:bg-white/10 hover:border-[#DBCCB1]/50 transition-all duration-300 group text-center"
+              className="w-full px-[19.2px] py-4 rounded-full border border-[#fbf7f1]/20 bg-white/5 hover:bg-white/10 hover:border-[#fbf7f1]/50 transition-all duration-300 group text-center"
             >
-              <span className="font-mono text-[14.4px] tracking-[0.1em] text-[#DBCCB1] transition-colors">
+              <span className="font-mono text-[14.4px] tracking-[0.1em] text-[#fbf7f1] transition-colors">
                 {option.nativeLabel}
               </span>
             </motion.button>
@@ -63,7 +63,7 @@ export const LanguageSelector = ({ onComplete }: LanguageSelectorProps) => {
         </div>
 
         {/* Subtitle */}
-        <p className="text-center font-mono text-[10px] text-[#DBCCB1]/40 mt-8 tracking-wider uppercase">
+        <p className="text-center font-mono text-[10px] text-[#fbf7f1]/40 mt-8 tracking-wider uppercase">
           Swara · Voice Check-in
         </p>
       </motion.div>

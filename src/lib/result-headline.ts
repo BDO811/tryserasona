@@ -134,8 +134,8 @@ export const RUNG_SCALE: Array<{
   color: string;
   colorLight: string;
 }> = [
-  { key: "focus", label: "LOW", color: "#FF6173", colorLight: "#8E1220" },
-  { key: "steady", label: "MEDIUM", color: "#F5EF79", colorLight: "#6D5200" },
-  { key: "good", label: "STRONG", color: "#4CAF6E", colorLight: "#1E5631" },
-  { key: "clean", label: "OPTIMAL", color: "#4CAF6E", colorLight: "#1E5631" },
+  { key: "focus", label: "LOW", color: "#c2608a", colorLight: "#7b2d5e" },
+  { key: "steady", label: "MEDIUM", color: "#d9b35c", colorLight: "#8a6a1f" },
+  { key: "good", label: "STRONG", color: "#3ba8b8", colorLight: "#0d6a76" },
+  { key: "clean", label: "OPTIMAL", color: "#3ba8b8", colorLight: "#0d6a76" },
 ];

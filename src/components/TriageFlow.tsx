@@ -245,7 +245,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
   const STEP_BACKGROUNDS = [asset("images/wellness-call.jpg"), asset("images/wellness-calm.jpg"), asset("images/voice-conversation.jpg"), asset("images/voice-studio.jpg")];
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center p-4 z-10 overflow-hidden" style={{ backgroundColor: "#DBCCB1" }}>
+    <div className="absolute inset-0 flex items-center justify-center p-4 z-10 overflow-hidden" style={{ backgroundColor: "#fbf7f1" }}>
       {/* Background photo, washed with the brand beige so the card stays legible;
           changes per step. Deliberately NOT wrapped in AnimatePresence: under
           mode="sync" the outgoing layer never completes its exit, so each step
@@ -259,7 +259,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
           opacity: 0.45,
         }}
       />
-      <div className="absolute inset-0" style={{ backgroundColor: "#DBCCB1", opacity: 0.4 }} />
+      <div className="absolute inset-0" style={{ backgroundColor: "#fbf7f1", opacity: 0.4 }} />
 
       {/* Plain div, not a motion.div: the card's framer-motion entry animation
           was observed freezing partway (stuck at ~0.31 opacity, washing the card
@@ -270,23 +270,23 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
         {/* Chrome Headers */}
         <div className="flex items-center justify-between mb-2">
           <img src={asset("brand/swara-mark-paper.svg")} alt="Swara" className="h-5 w-auto" />
-          <span className="font-mono text-xs tracking-[0.2em] uppercase text-[#DBCCB1]/85">
+          <span className="font-mono text-xs tracking-[0.2em] uppercase text-[#fbf7f1]/85">
             SWARA // 2026
           </span>
         </div>
 
         {/* Progress Bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-[#DBCCB1]/20 overflow-hidden rounded-t-2xl">
+        <div className="absolute top-0 left-0 right-0 h-1 bg-[#fbf7f1]/20 overflow-hidden rounded-t-2xl">
           <motion.div
             className="h-full"
-            style={{ backgroundColor: "#1E5631" }}
+            style={{ backgroundColor: "#c2410c" }}
             initial={{ width: "33%" }}
             animate={{
               width: `${(step / totalSteps) * 100}%`,
               boxShadow: [
-                "0 0 4px #1E5631, 0 0 8px #1E5631",
-                "0 0 14px #1E5631, 0 0 26px #1E5631",
-                "0 0 4px #1E5631, 0 0 8px #1E5631",
+                "0 0 4px #c2410c, 0 0 8px #c2410c",
+                "0 0 14px #c2410c, 0 0 26px #c2410c",
+                "0 0 4px #c2410c, 0 0 8px #c2410c",
               ],
             }}
             transition={{
@@ -298,7 +298,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
 
         {/* Step Indicator */}
         <div className="text-center mb-8 mt-2">
-          <span className="font-mono text-xs tracking-[0.2em] text-[#DBCCB1]/50 uppercase">
+          <span className="font-mono text-xs tracking-[0.2em] text-[#fbf7f1]/50 uppercase">
             {t("stepOf", language)} {step} / {totalSteps}
           </span>
         </div>
@@ -316,8 +316,8 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
               transition={{ duration: 0.4 }}
               className="flex flex-col gap-10"
             >
-              <h2 className="font-serif text-3xl md:text-4xl text-center text-[#DBCCB1] leading-snug italic w-full">
-                {t("personalizeScreening", language)}
+              <h2 className="font-serif text-3xl md:text-4xl text-center text-[#fbf7f1] leading-snug italic w-full">
+    {t("personalizeScreening", language)}
               </h2>
 
               <div className="grid grid-cols-2 gap-4">
@@ -336,8 +336,8 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
               transition={{ duration: 0.4 }}
               className="flex flex-col gap-10"
             >
-              <h2 className="font-serif text-3xl md:text-4xl text-center text-[#DBCCB1] leading-snug italic w-full">
-                {t("selectAgeBracket", language)}
+              <h2 className="font-serif text-3xl md:text-4xl text-center text-[#fbf7f1] leading-snug italic w-full">
+    {t("selectAgeBracket", language)}
               </h2>
 
               <div className="grid grid-cols-2 gap-4">
@@ -358,7 +358,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
               transition={{ duration: 0.4 }}
               className="flex flex-col gap-10 w-full"
             >
-              <h2 className={`font-serif text-center text-[#DBCCB1] leading-snug italic w-full ${
+              <h2 className={`font-serif text-center text-[#fbf7f1] leading-snug italic w-full ${
                 isSeniorMode ? 'text-3xl md:text-4xl font-medium' : 'text-3xl md:text-4xl'
               }`}>
                 {t("primaryHealthFocus", language)}
@@ -390,12 +390,12 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
               className="flex flex-col gap-6"
             >
               <div className="text-center mb-2">
-                <h2 className={`font-serif text-[#DBCCB1] leading-snug italic mb-3 ${
+                <h2 className={`font-serif text-[#fbf7f1] leading-snug italic mb-3 ${
                   isSeniorMode ? 'text-2xl md:text-3xl font-medium' : 'text-2xl md:text-3xl'
                 }`}>
                   {t("secureSession", language)}
                 </h2>
-                <p className={`text-[#DBCCB1]/65 leading-relaxed ${
+                <p className={`text-[#fbf7f1]/65 leading-relaxed ${
                   isSeniorMode ? 'text-base' : 'text-sm'
                 }`}>
                   {t("consentDescription", language)}
@@ -405,7 +405,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
               <form onSubmit={handleSubmit} className="space-y-5">
                 {/* Full Name */}
                 <div className="space-y-2">
-                  <label className={`font-medium tracking-wider text-[#DBCCB1]/65 uppercase ${
+                  <label className={`font-medium tracking-wider text-[#fbf7f1]/65 uppercase ${
                     isSeniorMode ? 'text-sm' : 'text-xs'
                   }`}>
                     {t("fullName", language)}
@@ -419,8 +419,8 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
                       value={formData.fullName}
                       onChange={handleInputChange('fullName')}
                       placeholder={t("enterFullName", language)}
-                      className={`bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none text-[#DBCCB1] placeholder:text-[#DBCCB1]/40 focus:ring-0 transition-colors ${
-                        errors.fullName ? 'border-destructive focus:border-destructive' : 'border-[#DBCCB1]/25 focus:border-[#DBCCB1]/60'
+                      className={`bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none text-[#fbf7f1] placeholder:text-[#fbf7f1]/40 focus:ring-0 transition-colors ${
+                        errors.fullName ? 'border-destructive focus:border-destructive' : 'border-[#fbf7f1]/25 focus:border-[#fbf7f1]/60'
                       } ${isSeniorMode ? 'h-16 text-lg' : 'h-12'}`}
                     />
                   </motion.div>
@@ -437,7 +437,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
 
                 {/* Email */}
                 <div className="space-y-2">
-                  <label className={`font-medium tracking-wider text-[#DBCCB1]/65 uppercase flex items-center gap-2 ${
+                  <label className={`font-medium tracking-wider text-[#fbf7f1]/65 uppercase flex items-center gap-2 ${
                     isSeniorMode ? 'text-sm' : 'text-xs'
                   }`}>
                     <Mail className={isSeniorMode ? 'w-4 h-4' : 'w-3.5 h-3.5'} />
@@ -452,8 +452,8 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
                       value={formData.email}
                       onChange={handleInputChange('email')}
                       placeholder={t("enterEmail", language)}
-                      className={`bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none text-[#DBCCB1] placeholder:text-[#DBCCB1]/40 focus:ring-0 transition-colors ${
-                        errors.email ? 'border-destructive focus:border-destructive' : 'border-[#DBCCB1]/25 focus:border-[#DBCCB1]/60'
+                      className={`bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none text-[#fbf7f1] placeholder:text-[#fbf7f1]/40 focus:ring-0 transition-colors ${
+                        errors.email ? 'border-destructive focus:border-destructive' : 'border-[#fbf7f1]/25 focus:border-[#fbf7f1]/60'
                       } ${isSeniorMode ? 'h-16 text-lg' : 'h-12'}`}
                     />
                   </motion.div>
@@ -470,7 +470,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
 
                 {/* Phone */}
                 <div className="space-y-2">
-                  <label className={`font-medium tracking-wider text-[#DBCCB1]/65 uppercase flex items-center gap-2 ${
+                  <label className={`font-medium tracking-wider text-[#fbf7f1]/65 uppercase flex items-center gap-2 ${
                     isSeniorMode ? 'text-sm' : 'text-xs'
                   }`}>
                     <Smartphone className={isSeniorMode ? 'w-4 h-4' : 'w-3.5 h-3.5'} />
@@ -485,8 +485,8 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
                       value={formData.phone}
                       onChange={handleInputChange('phone')}
                       placeholder={t("enterPhone", language)}
-                      className={`bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none text-[#DBCCB1] placeholder:text-[#DBCCB1]/40 focus:ring-0 transition-colors ${
-                        errors.phone ? 'border-destructive focus:border-destructive' : 'border-[#DBCCB1]/25 focus:border-[#DBCCB1]/60'
+                      className={`bg-transparent border-b border-t-0 border-l-0 border-r-0 rounded-none text-[#fbf7f1] placeholder:text-[#fbf7f1]/40 focus:ring-0 transition-colors ${
+                        errors.phone ? 'border-destructive focus:border-destructive' : 'border-[#fbf7f1]/25 focus:border-[#fbf7f1]/60'
                       } ${isSeniorMode ? 'h-16 text-lg' : 'h-12'}`}
                     />
                   </motion.div>
@@ -507,20 +507,20 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
                     id="consent"
                     checked={consentGiven}
                     onCheckedChange={(checked) => setConsentGiven(checked === true)}
-                    className={`mt-0.5 border-[#DBCCB1]/40 ${
+                    className={`mt-0.5 border-[#fbf7f1]/40 ${
                       isSeniorMode ? 'h-6 w-6' : ''
                     }`}
                   />
                   <label
                     htmlFor="consent"
-                    className={`text-[#DBCCB1]/65 leading-relaxed cursor-pointer ${
+                    className={`text-[#fbf7f1]/65 leading-relaxed cursor-pointer ${
                       isSeniorMode ? 'text-base' : 'text-xs'
                     }`}
                   >
                     {t("consentText", language)}{' '}
-                    <span className="text-[#DBCCB1] underline hover:text-white cursor-pointer">{t("termsOfService", language)}</span>
+                    <span className="text-[#fbf7f1] underline hover:text-white cursor-pointer">{t("termsOfService", language)}</span>
                     {' '}{t("and", language)}{' '}
-                    <span className="text-[#DBCCB1] underline hover:text-white cursor-pointer">{t("privacyPolicy", language)}</span>.
+                    <span className="text-[#fbf7f1] underline hover:text-white cursor-pointer">{t("privacyPolicy", language)}</span>.
                   </label>
                 </div>
 
@@ -529,7 +529,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
                   <Button
                     type="submit"
                     disabled={isSubmitting || !isFormValid}
-                    className={`w-full font-medium uppercase transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed bg-[#DBCCB1] text-black hover:bg-white ${
+                    className={`w-full font-medium uppercase transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed bg-[#fbf7f1] text-black hover:bg-white ${
                       isSeniorMode ? 'h-16 text-base tracking-[0.15em]' : 'h-14 text-sm tracking-[0.15em]'
                     }`}
                   >
@@ -545,7 +545,7 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
                 </div>
               </form>
 
-              <p className={`text-[#DBCCB1]/40 text-center ${
+              <p className={`text-[#fbf7f1]/40 text-center ${
                 isSeniorMode ? 'text-sm' : 'text-[10px]'
               }`}>
                 {t("encryptionNote", language)}
@@ -584,25 +584,25 @@ const FocusCard = ({ icon: Icon, label, subtitle, onClick, isHighVis = false, is
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
     onClick={onClick}
-    className={`rounded-xl border border-[#DBCCB1]/20 bg-white/5 hover:bg-white/10 hover:border-[#DBCCB1]/50 transition-all duration-300 flex flex-col items-center text-center gap-3 group min-w-0 ${
+    className={`rounded-xl border border-[#fbf7f1]/20 bg-white/5 hover:bg-white/10 hover:border-[#fbf7f1]/50 transition-all duration-300 flex flex-col items-center text-center gap-3 group min-w-0 ${
       isSeniorMode ? 'p-5 py-7' : isHighVis ? 'p-4 py-6' : 'p-4'
     }`}
   >
-    <div className={`rounded-full bg-[#DBCCB1]/10 flex items-center justify-center group-hover:bg-[#DBCCB1]/20 transition-colors flex-shrink-0 ${
+    <div className={`rounded-full bg-[#fbf7f1]/10 flex items-center justify-center group-hover:bg-[#fbf7f1]/20 transition-colors flex-shrink-0 ${
       isSeniorMode ? 'w-12 h-12' : 'w-10 h-10'
     }`}>
-      <Icon className={`text-[#DBCCB1] ${isSeniorMode ? 'w-6 h-6' : 'w-5 h-5'}`} />
+      <Icon className={`text-[#fbf7f1] ${isSeniorMode ? 'w-6 h-6' : 'w-5 h-5'}`} />
     </div>
     <div className="space-y-1 w-full min-w-0">
       {/* Card labels are short but demographic variants ("Male Vitality",
           "Testosterone") are the longest — keep them on one line rather than
           letting a two-word label wrap and change the card height. */}
-      <span className={`font-mono tracking-[0.1em] text-[#DBCCB1] block truncate whitespace-nowrap ${
+      <span className={`font-mono tracking-[0.1em] text-[#fbf7f1] block truncate whitespace-nowrap ${
         isSeniorMode ? 'text-base font-semibold' : isHighVis ? 'text-sm font-medium' : 'text-xs'
       }`}>
         {label}
       </span>
-      <span className={`font-mono tracking-[0.1em] uppercase text-[#DBCCB1]/60 block truncate whitespace-nowrap ${
+      <span className={`font-mono tracking-[0.1em] uppercase text-[#fbf7f1]/60 block truncate whitespace-nowrap ${
         isSeniorMode ? 'text-sm font-medium' : isHighVis ? 'text-xs font-medium' : 'text-[10px] md:text-xs'
       }`}>
         {subtitle}
@@ -621,9 +621,9 @@ const OptionButton = ({ label, onClick }: OptionButtonProps) => (
     whileHover={{ scale: 1.02 }}
     whileTap={{ scale: 0.98 }}
     onClick={onClick}
-    className="px-6 py-4 rounded-full border border-[#DBCCB1]/20 bg-white/5 hover:bg-white/10 hover:border-[#DBCCB1]/50 transition-all duration-300 group"
+    className="px-6 py-4 rounded-full border border-[#fbf7f1]/20 bg-white/5 hover:bg-white/10 hover:border-[#fbf7f1]/50 transition-all duration-300 group"
   >
-    <span className="font-mono text-sm tracking-[0.15em] text-[#DBCCB1] transition-colors">
+    <span className="font-mono text-sm tracking-[0.15em] text-[#fbf7f1] transition-colors">
       {label}
     </span>
   </motion.button>

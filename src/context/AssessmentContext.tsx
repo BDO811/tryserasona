@@ -26,8 +26,8 @@ export interface PathwayConfig {
 }
 
 // Unified Brand Color
-export const BRAND_COLOR = "#1E5631";
-export const BRAND_COLOR_HSL = "140 48% 23%";
+export const BRAND_COLOR = "#c2410c";
+export const BRAND_COLOR_HSL = "17 88% 40%";
 
 export const SAMPLE_RATE_LABEL = "48kHz";
 

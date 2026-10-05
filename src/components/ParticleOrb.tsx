@@ -52,7 +52,7 @@ export const ParticleOrb = ({ onClick }: { onClick: () => void }) => {
     setParticles(newParticles);
   }, []);
 
-  const glowColor = pathwayConfig?.color || "#1E5631";
+  const glowColor = pathwayConfig?.color || "#c2410c";
   
   return (
     <motion.div

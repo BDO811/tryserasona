@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 import type { SignalHistory } from "@/hooks/use-voice-history";
 import { formatSigned } from "@/lib/longitudinal";
 
-const TAN = "#B79862";
-const AMBER = "#FFC163";
-const GREEN = "#4CAF6E";
+const TAN = "#a89483";
+const AMBER = "#d9822f";
+const GREEN = "#3ba8b8";
 
 /** A move smaller than this reads as unchanged rather than as a direction. */
 const FLAT_THRESHOLD = 0.02;
@@ -45,7 +45,7 @@ export const SinceLastVisitPanel = ({
     <motion.div
       className="rounded-lg overflow-hidden"
       style={{
-        background: "rgba(11, 11, 10, 0.9)",
+        background: "rgba(27, 21, 16, 0.9)",
         border: "1px solid rgba(255, 255, 255, 0.1)",
       }}
       initial={{ opacity: 0, y: 8 }}

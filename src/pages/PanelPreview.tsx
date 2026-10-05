@@ -73,7 +73,7 @@ const Hero = ({ rung }: { rung: HeadlineRung }) => (
   <div className="relative px-4 py-4">
     <h2
       className={`text-center font-mono uppercase ${HERO_TYPE}`}
-      style={{ color: "#8A3B08" }}
+      style={{ color: "#a94e08" }}
     >
       Athletic Profile
     </h2>
@@ -86,14 +86,14 @@ const Hero = ({ rung }: { rung: HeadlineRung }) => (
         ariaLabel="Assessment outcome"
       />
     </div>
-    <div className="rounded-xl overflow-hidden" style={{ backgroundColor: "#0B0B0A" }}>
+    <div className="rounded-xl overflow-hidden" style={{ backgroundColor: "#1b1510" }}>
       <SpectrogramWaveform
         displayText={RUNG_RECOMMENDATION[rung]}
         statusColor={RUNG_SCALE.find((r) => r.key === rung)!.color}
         showContent
       />
     </div>
-    <div className={`text-center font-mono uppercase mt-2 ${HERO_TYPE}`} style={{ color: "#4B2700" }}>
+    <div className={`text-center font-mono uppercase mt-2 ${HERO_TYPE}`} style={{ color: "#574b3f" }}>
       Assessment
     </div>
   </div>
@@ -104,8 +104,8 @@ const PanelPreview = () => {
 
   if (!isDevMode) {
     return (
-      <div className="min-h-screen bg-[#F0EAE0] p-8">
-        <p className="font-mono text-xs text-[#2E2E2E]">Add ?dev=true to enable.</p>
+      <div className="min-h-screen bg-[#fbf7f1] p-8">
+        <p className="font-mono text-xs text-[#6f6254]">Add ?dev=true to enable.</p>
       </div>
     );
   }
@@ -121,7 +121,7 @@ const PanelPreview = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#F0EAE0] py-8">
+    <div className="min-h-screen bg-[#fbf7f1] py-8">
       {/*
         The report's entry animation is driven by requestAnimationFrame, which
         does not run while a tab is hidden — and a headless or embedded browser
@@ -137,42 +137,42 @@ const PanelPreview = () => {
 
       {/* 420px is the report's own content width. */}
       <div className="mx-auto" data-panel-preview style={{ maxWidth: 420 }}>
-        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-1 px-4">
+        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-1 px-4">
           Hero · every rung
         </h1>
         {(["clean", "good", "steady", "focus"] as HeadlineRung[]).map((r) => (
           <Hero key={r} rung={r} />
         ))}
 
-        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-1 mt-6 px-4">
+        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-1 mt-6 px-4">
           Signal rows · live pulse set
         </h1>
         <div className="px-4 py-3">
           <SignalPanel signals={LIVE_SIGNALS} showContent />
         </div>
 
-        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-1 mt-6 px-4">
+        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-1 mt-6 px-4">
           Sub-Dimensions · real apex run
         </h1>
         <div className="px-4 py-3">
           <SubDimensionPanel metrics={APEX_RUN} showContent />
         </div>
 
-        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-1 mt-6 px-4">
+        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-1 mt-6 px-4">
           Same run forced to both edges
         </h1>
         <div className="px-4 py-3">
           <SubDimensionPanel metrics={AT_THE_EDGES} showContent />
         </div>
 
-        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-1 mt-6 px-4">
+        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-1 mt-6 px-4">
           Senior mode
         </h1>
         <div className="px-4 py-3">
           <SubDimensionPanel metrics={APEX_RUN} showContent isSeniorMode />
         </div>
 
-        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-1 mt-6 px-4">
+        <h1 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-1 mt-6 px-4">
           Body map · same data, grouped by icon · one abnormal per section
         </h1>
         <div className="px-4 py-3">

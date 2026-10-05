@@ -18,9 +18,9 @@ import { MIN_SESSIONS_FOR_BASELINE, fitLine, formatSigned } from "@/lib/longitud
  * lighter green tint, never lime, plus amber for the deviation layer.
  */
 
-const GREEN = "#4CAF6E";
-const AMBER = "#FFC163";
-const TAN = "#B79862";
+const GREEN = "#3ba8b8";
+const AMBER = "#d9822f";
+const TAN = "#a89483";
 
 /** Trailing readings that count as the recent window, matching the engine. */
 const RECENT_WINDOW = 3;
@@ -124,7 +124,7 @@ export const LongitudinalChart = ({ read, label }: LongitudinalChartProps) => {
       : PLOT.x1;
 
   return (
-    <div className="rounded-lg overflow-hidden" style={{ backgroundColor: "#000000" }}>
+    <div className="rounded-lg overflow-hidden" style={{ backgroundColor: "#1b1510" }}>
       <div className="flex items-baseline justify-between gap-3 px-4 pt-3 pb-1 flex-wrap">
         <span className="font-mono text-[10px] uppercase tracking-[0.18em]" style={{ color: TAN }}>
           {label}

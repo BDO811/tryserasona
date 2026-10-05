@@ -61,15 +61,15 @@ const LEVEL_TREATMENT: Record<SignalLevel, UiTreatment> = {
  * treatments drive the palette and two levels sharing a treatment share a
  * colour. Brand palette only, no lime.
  *
- * Two grounds: the dark data canvas, and the beige page. Every light value is
- * measured above 4.5:1 against #DBCCB1, where the dark ramp collapses —
- * #FFC163 is 1.02:1 there.
+ * Two grounds: the dark data canvas, and the paper page. Every light value is
+ * measured for contrast against the Swara paper surface, where the dark ramp
+ * collapses — a bright caution tone has too little contrast there.
  */
 const TREATMENT_COLOR: Record<UiTreatment, { dark: string; light: string }> = {
-  neutral: { dark: "#B79862", light: "#665233" },
-  informational: { dark: "#4CAF6E", light: "#1E5631" },
-  caution: { dark: "#FFC163", light: "#8A3B08" },
-  alert: { dark: "#FF6173", light: "#8E1220" },
+  neutral: { dark: "#a89483", light: "#6f6254" },
+  informational: { dark: "#3ba8b8", light: "#0d6a76" },
+  caution: { dark: "#d9822f", light: "#a94e08" },
+  alert: { dark: "#c2608a", light: "#7b2d5e" },
 };
 
 export type Surface = "dark" | "light";
@@ -184,11 +184,11 @@ export function bandRank(band: DisplayBand): number {
  * light value measured above 4.5:1 against the beige page.
  */
 const BAND_COLOR: Record<DisplayBand, { dark: string; light: string }> = {
-  NORMAL: { dark: "#4CAF6E", light: "#1E5631" },
-  LOW: { dark: "#F5EF79", light: "#6D5200" },
-  MODERATE: { dark: "#FFC163", light: "#8A3B08" },
-  ELEVATED: { dark: "#FF6173", light: "#8E1220" },
-  INCONCLUSIVE: { dark: "#CECECE", light: "#565656" },
+  NORMAL: { dark: "#3ba8b8", light: "#0d6a76" },
+  LOW: { dark: "#d9b35c", light: "#8a6a1f" },
+  MODERATE: { dark: "#d9822f", light: "#a94e08" },
+  ELEVATED: { dark: "#c2608a", light: "#7b2d5e" },
+  INCONCLUSIVE: { dark: "#a89483", light: "#6f6254" },
 };
 
 /**

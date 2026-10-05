@@ -6,9 +6,9 @@ import { useVoiceHistory } from "@/hooks/use-voice-history";
 import { LongitudinalChart } from "@/components/report/LongitudinalChart";
 import { formatSigned } from "@/lib/longitudinal";
 
-const TAN = "#B79862";
-const AMBER = "#FFC163";
-const GREEN = "#4CAF6E";
+const TAN = "#6f6254";
+const AMBER = "#a94e08";
+const GREEN = "#0d6a76";
 
 /**
  * Longitudinal analysis: the user's own history per signal, rather than a
@@ -23,21 +23,21 @@ const LongitudinalView = () => {
   const email = userProfile.email?.trim() || "";
 
   return (
-    <div className="min-h-screen w-full" style={{ backgroundColor: "#DBCCB1" }}>
+    <div className="min-h-screen w-full" style={{ backgroundColor: "#fbf7f1" }}>
       <div className="mx-auto max-w-3xl px-4 pt-20 pb-16 md:pt-24">
         <button
           onClick={() => navigate(-1)}
           className="mb-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.18em]"
-          style={{ color: "#231200" }}
+          style={{ color: "#1b1510" }}
         >
           <ChevronLeft className="h-4 w-4" />
           Back
         </button>
 
-        <h1 className="mb-2 text-3xl md:text-4xl" style={{ color: "#231200" }}>
+        <h1 className="mb-2 text-3xl md:text-4xl" style={{ color: "#1b1510" }}>
           Your history
         </h1>
-        <p className="mb-8 max-w-xl font-mono text-[11px] leading-relaxed" style={{ color: "#4B2700" }}>
+        <p className="mb-8 max-w-xl font-mono text-[11px] leading-relaxed" style={{ color: "#574b3f" }}>
           Each reading is placed against your own recent readings, so it can be reported as a
           deviation and a direction rather than a bare number. A score is the likelihood a signal is
           present, not how severe it is, and none of this is a diagnosis.
@@ -111,7 +111,7 @@ const LongitudinalView = () => {
 
             <p
               className="mt-10 font-mono text-[10px] leading-relaxed"
-              style={{ color: "#4B2700" }}
+              style={{ color: "#574b3f" }}
             >
               Recent sessions weigh more, so the baseline moves as new readings arrive. Repeated
               recordings in one sitting count once and cannot move it. A direction is reported only
@@ -126,10 +126,10 @@ const LongitudinalView = () => {
 
 const Stat = ({ label, value }: { label: string; value: string }) => (
   <div>
-    <div className="font-mono text-[9px] uppercase tracking-[0.18em]" style={{ color: "#4B2700" }}>
+    <div className="font-mono text-[9px] uppercase tracking-[0.18em]" style={{ color: "#574b3f" }}>
       {label}
     </div>
-    <div className="font-mono text-base" style={{ color: "#231200" }}>
+    <div className="font-mono text-base" style={{ color: "#1b1510" }}>
       {value}
     </div>
   </div>
@@ -137,7 +137,7 @@ const Stat = ({ label, value }: { label: string; value: string }) => (
 
 const Readout = ({ label, value, color }: { label: string; value: string; color: string }) => (
   <div>
-    <div className="font-mono text-[9px] uppercase tracking-[0.18em]" style={{ color: "#4B2700" }}>
+    <div className="font-mono text-[9px] uppercase tracking-[0.18em]" style={{ color: "#574b3f" }}>
       {label}
     </div>
     <div className="font-mono text-xs uppercase tracking-wide" style={{ color }}>
@@ -148,10 +148,10 @@ const Readout = ({ label, value, color }: { label: string; value: string; color:
 
 const EmptyState = ({ headline, body }: { headline: string; body: string }) => (
   <div className="rounded-lg px-5 py-6" style={{ backgroundColor: "rgba(0,0,0,0.06)" }}>
-    <h2 className="mb-1.5 font-mono text-xs uppercase tracking-[0.18em]" style={{ color: "#231200" }}>
+    <h2 className="mb-1.5 font-mono text-xs uppercase tracking-[0.18em]" style={{ color: "#1b1510" }}>
       {headline}
     </h2>
-    <p className="font-mono text-[11px] leading-relaxed" style={{ color: "#4B2700" }}>
+    <p className="font-mono text-[11px] leading-relaxed" style={{ color: "#574b3f" }}>
       {body}
     </p>
   </div>

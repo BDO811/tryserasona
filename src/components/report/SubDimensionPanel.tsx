@@ -26,14 +26,14 @@ interface SubDimensionPanelProps {
  * at the unfavourable one. Indexed by the row's own band, not by screen
  * position, so it stays correct however the scale is ordered.
  *
- * Blue is Breath #99E4FF from the brand palette. It marks the favourable end as
+ * Blue is Swara's hydration blue. It marks the favourable end as
  * better than ordinary rather than merely safe, which green alone could not do
  * once green moved to the middle.
  */
 const DIRECTION_COLORS: Array<{ dark: string; light: string }> = [
-  { dark: "#99E4FF", light: "#12657F" },
-  { dark: "#4CAF6E", light: "#1E5631" },
-  { dark: "#FF6173", light: "#8E1220" },
+  { dark: "#4a90c9", light: "#1d5fa8" },
+  { dark: "#3ba8b8", light: "#0d6a76" },
+  { dark: "#c2608a", light: "#7b2d5e" },
 ];
 
 /**
@@ -74,7 +74,7 @@ export const SubDimensionPanel = ({
       twenty-four cells. Container width here is set by the chassis, so a
       viewport breakpoint is the wrong lever.
     */
-    <div className="flex flex-col gap-px bg-[#231200]/15 rounded-lg overflow-hidden">
+    <div className="flex flex-col gap-px bg-[#1b1510]/15 rounded-lg overflow-hidden">
       {rows.map((row, index) => (
         <motion.div
           key={row.id}

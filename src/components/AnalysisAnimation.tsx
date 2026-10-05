@@ -95,7 +95,7 @@ export const ARCHETYPES: ArchetypeData[] = [
     name: 'ETHEREAL',
     title: 'ETHEREAL WEAVER',
     shape: 'hexagon',
-    color: '#1E5631', // Cyan
+    color: '#c2410c', // Ember
     description: 'Your voice carries ethereal qualities of interconnection. You weave together disparate elements into harmonious patterns.',
     vitality: 79,
     resonance: 93,
@@ -306,10 +306,10 @@ const generateGrid = (count: number, size: number) => {
 
 // Each of the 6 stages gets its own color and its own particle-mark shape,
 // so the graphic reads as 6 distinct moments rather than one repeating loop.
-// These are deliberately dark and saturated: the screen sits on beige #DBCCB1,
-// and a mid-tone or bright hue (the old orange and yellow especially) sank into
-// that background instead of reading against it.
-const STAGE_COLORS = ["#1E5631", "#123A75", "#8E1220", "#4A1C82", "#8A3B08", "#0E4C57"];
+// These are deliberately dark and saturated: the screen sits on the Swara
+// paper background #fbf7f1, and a mid-tone or bright hue (the old orange and
+// yellow especially) sank into that background instead of reading against it.
+const STAGE_COLORS = ["#c2410c", "#1d5fa8", "#7b2d5e", "#1b1510", "#a94e08", "#0d6a76"];
 const STAGE_SHAPES: Array<"circle" | "star" | "triangle" | "square" | "diamond"> = [
   "circle",
   "star",
@@ -329,15 +329,16 @@ function hexToRgb(hex: string): Rgb {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
     ? { r: parseInt(result[1], 16), g: parseInt(result[2], 16), b: parseInt(result[3], 16) }
-    : { r: 30, g: 86, b: 49 }; // fall back to the brand dark green
+    : { r: 194, g: 65, b: 12 }; // fall back to the brand ember
 }
 
 /**
- * Beige #DBCCB1 is a light surface, so anything above roughly 40% luminance
- * stops reading as ink and starts blending in. The archetype palette is neon by
- * design (#00FF94, #FFB800), which is why the final stage used to wash out.
- * Scale any color down to that ceiling, preserving its hue, so every stage stays
- * bold and dark against the background.
+ * The Swara paper background #fbf7f1 is a light surface, so anything above
+ * roughly 40% luminance stops reading as ink and starts blending in. The
+ * archetype palette is neon by design (#00FF94, #FFB800), which is why the
+ * final stage used to wash out. Scale any color down to that ceiling,
+ * preserving its hue, so every stage stays bold and dark against the
+ * background.
  */
 const MAX_LUMINANCE_ON_BEIGE = 0.42;
 function inkOnBeige({ r, g, b }: Rgb): Rgb {
@@ -836,7 +837,7 @@ export const AnalysisAnimation = ({ onComplete, onFailed }: AnalysisAnimationPro
   return (
     <motion.div
       className="fixed inset-0 flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: "#DBCCB1" }}
+      style={{ backgroundColor: "#fbf7f1" }}
       initial={{ opacity: 1 }}
     >
       {/* Flash overlay - uses archetype color */}

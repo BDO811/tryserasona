@@ -110,7 +110,7 @@ const DetailedAnalysisView = () => {
       };
 
       // Header
-      doc.setFillColor(30, 86, 49);
+      doc.setFillColor(194, 65, 12);
       doc.rect(0, 0, pageWidth, 30, "F");
       
       doc.setTextColor(0, 0, 0);
@@ -125,7 +125,7 @@ const DetailedAnalysisView = () => {
       yPosition = 40;
 
       // Assessment Title
-      doc.setTextColor(30, 86, 49);
+      doc.setTextColor(194, 65, 12);
       doc.setFontSize(12);
       doc.setFont("helvetica", "bold");
       doc.text(assessmentTitle.toUpperCase(), margin, yPosition);
@@ -207,7 +207,7 @@ const DetailedAnalysisView = () => {
 
       // Section 1: Biometric Results and Descriptions
       checkPageBreak(20);
-      doc.setTextColor(30, 86, 49);
+      doc.setTextColor(194, 65, 12);
       doc.setFontSize(11);
       doc.setFont("helvetica", "bold");
       doc.text("BIOMETRIC RESULTS AND DESCRIPTIONS", margin, yPosition);
@@ -230,7 +230,7 @@ const DetailedAnalysisView = () => {
         const biomarkerHeight = 50; // Approximate height per biomarker
         if (checkPageBreak(biomarkerHeight)) {
           // Redraw section header on new page
-          doc.setTextColor(30, 86, 49);
+          doc.setTextColor(194, 65, 12);
           doc.setFontSize(11);
           doc.setFont("helvetica", "bold");
           doc.text("BIOMETRIC RESULTS AND DESCRIPTIONS (continued)", margin, yPosition);
@@ -295,7 +295,7 @@ const DetailedAnalysisView = () => {
 
       // Section 2: Signal Quality Report (moved to bottom)
       checkPageBreak(20);
-      doc.setTextColor(30, 86, 49);
+      doc.setTextColor(194, 65, 12);
       doc.setFontSize(11);
       doc.setFont("helvetica", "bold");
       doc.text("SIGNAL QUALITY REPORT", margin, yPosition);
@@ -400,8 +400,8 @@ const DetailedAnalysisView = () => {
 
   return (
     <motion.div
-      className="min-h-screen text-[#231200]"
-      style={{ backgroundColor: "#DBCCB1" }}
+      className="min-h-screen text-[#1b1510]"
+      style={{ backgroundColor: "#fbf7f1" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -437,31 +437,31 @@ const DetailedAnalysisView = () => {
           >
             Technical Appendix: {protocolId}
           </h1>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-[#2E2E2E] mb-3">
+          <p className="font-mono text-[10px] uppercase tracking-widest text-[#6f6254] mb-3">
             {assessmentTitle} Assessment — Detailed Biomarker Analysis
           </p>
           
           {/* Metadata Header Bar (matching dashboard) */}
           {visualizedResult && (
-            <div className="flex flex-col px-4 py-2 border-b border-[#231200]/20 font-mono text-[9px] md:text-[10px] uppercase tracking-wider mb-6">
+            <div className="flex flex-col px-4 py-2 border-b border-[#1b1510]/20 font-mono text-[9px] md:text-[10px] uppercase tracking-wider mb-6">
               {/* First Row: Date | Sample Rate | Model */}
               <div className="flex items-center justify-center gap-3 flex-wrap mb-1">
-                <span className="text-[#2E2E2E]">
-                  Date: <span className="text-[#231200] font-medium">{new Date(visualizedResult.createdAt).toISOString().split('T')[0].replace(/-/g, '.')}</span>
+                <span className="text-[#6f6254]">
+                  Date: <span className="text-[#1b1510] font-medium">{new Date(visualizedResult.createdAt).toISOString().split('T')[0].replace(/-/g, '.')}</span>
                 </span>
-                <span className="text-[#4B2700]/50">|</span>
-                <span className="text-[#2E2E2E]">
-                  Sample Rate: <span className="text-[#231200] font-medium">48kHz</span>
+                <span className="text-[#574b3f]/50">|</span>
+                <span className="text-[#6f6254]">
+                  Sample Rate: <span className="text-[#1b1510] font-medium">48kHz</span>
                 </span>
-                <span className="text-[#4B2700]/50">|</span>
-                <span className="text-[#2E2E2E]">
-                  Model: <span className="text-[#231200] font-medium">SWARA-2.0</span>
+                <span className="text-[#574b3f]/50">|</span>
+                <span className="text-[#6f6254]">
+                  Model: <span className="text-[#1b1510] font-medium">SWARA-2.0</span>
                 </span>
               </div>
               {/* Second Row: Job ID only */}
               <div className="flex items-center justify-center gap-3 flex-wrap">
-                <span className="text-[#2E2E2E]">
-                  Job ID: <span className="text-[#231200] font-medium">{visualizedResult.jobId}</span>
+                <span className="text-[#6f6254]">
+                  Job ID: <span className="text-[#1b1510] font-medium">{visualizedResult.jobId}</span>
                 </span>
               </div>
             </div>
@@ -479,7 +479,7 @@ const DetailedAnalysisView = () => {
                 <div className="max-w-md mx-auto mb-5">
                   <div
                     className="font-mono text-[9px] uppercase tracking-[0.2em] mb-2.5"
-                    style={{ color: "#4B2700" }}
+                    style={{ color: "#574b3f" }}
                   >
                     Assessment
                   </div>
@@ -544,11 +544,11 @@ const DetailedAnalysisView = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-4 pb-2 border-b border-[#231200]/20">
+          <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-4 pb-2 border-b border-[#1b1510]/20">
             Biometric Results and Descriptions
           </h2>
           
-          <p className="font-mono text-[9px] text-[#2E2E2E] mb-4">
+          <p className="font-mono text-[9px] text-[#6f6254] mb-4">
             Note: We analyze over 1,000 voice biomarkers. The markers shown here are a small subset that are easiest to interpret and most influential in your result.
           </p>
           
@@ -561,7 +561,7 @@ const DetailedAnalysisView = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.35 + index * 0.05 }}
                 style={{
-                  background: 'rgba(11, 11, 10, 0.9)',
+                  background: 'rgba(27, 21, 16, 0.9)',
                   border: '1px solid rgba(255, 255, 255, 0.1)',
                 }}
               >
@@ -630,7 +630,7 @@ const DetailedAnalysisView = () => {
                   {biomarker.clinicalContext && (
                     <div 
                       className="rounded px-3 py-2 mb-2"
-                      style={{ background: 'rgba(30, 86, 49, 0.05)' }}
+                      style={{ background: 'rgba(194, 65, 12, 0.05)' }}
                     >
                       <span className="font-mono text-[9px] uppercase tracking-wider text-white block mb-1">
                         Clinical Context
@@ -655,7 +655,7 @@ const DetailedAnalysisView = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.35 }}
           >
-            <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-2 pb-2 border-b border-[#231200]/20">
+            <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-2 pb-2 border-b border-[#1b1510]/20">
               Sub-Dimension Metrics
             </h2>
             <p className="font-mono text-[9px] text-white leading-relaxed mb-4">
@@ -719,7 +719,7 @@ const DetailedAnalysisView = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-4 pb-2 border-b border-[#231200]/20">
+            <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-4 pb-2 border-b border-[#1b1510]/20">
               Signal Quality Report
             </h2>
             
@@ -774,7 +774,7 @@ const DetailedAnalysisView = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
         >
-          <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#231200] mb-4 pb-2 border-b border-[#231200]/20">
+          <h2 className="font-mono text-[10px] uppercase tracking-widest text-[#1b1510] mb-4 pb-2 border-b border-[#1b1510]/20">
             Export Report
           </h2>
           
