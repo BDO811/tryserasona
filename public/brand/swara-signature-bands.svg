@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="440 0 520 300" width="520" height="300" role="img" aria-label="Swara signature band graphic">
+  <!--
+    The band graphic alone, transparent background, no wordmark — for pairing with
+    a live "swara" wordmark set separately (per the no-drawn-wordmark rule), or for
+    use as a standalone decorative/section-break graphic. Same geometry as
+    swara-signature-cover.svg; crop the paper-coloured background to whatever
+    ground this sits on (the arc "cut" strokes must match that ground colour, not
+    stay #fbf7f1, if placed on a surface other than surface-canvas).
+  -->
+  <rect x="512" y="16"  width="320" height="44" rx="22" fill="#e0f0f3"/>
+  <rect x="512" y="72"  width="448" height="44" rx="22" fill="#c2410c"/>
+  <rect x="512" y="128" width="392" height="44" rx="22" fill="#1b1510"/>
+  <rect x="512" y="184" width="448" height="44" rx="22" fill="#0d6a76"/>
+  <rect x="512" y="240" width="236" height="44" rx="22" fill="#7b2d5e"/>
+  <path d="M512 -10A160 160 0 0 1 512 310"  fill="none" stroke="#fbf7f1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M512 -70A220 220 0 0 1 512 370"  fill="none" stroke="#fbf7f1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M512 -130A280 280 0 0 1 512 430" fill="none" stroke="#fbf7f1" stroke-width="8" stroke-linecap="round"/>
+</svg>

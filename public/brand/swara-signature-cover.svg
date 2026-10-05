@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 300" width="960" height="300" role="img" aria-label="Swara — Twenty seconds tells you how you are.">
+  <!--
+    Swara's primary brand signature: the "Cover" plate. Five unequal pill bands —
+    surface-tide-soft, ember, surface-inverse, tide, metric-stress — cut by three
+    concentric arcs in the ground colour, struck from the logomark's own geometry
+    (a sounding point with arcs leaving it, read sideways as a level meter).
+    Source of truth for the geometry: components/Cover/preview.html. Regenerate
+    this file from that markup if the name, palette, display face or scales change
+    — do not hand-edit the band or arc coordinates.
+  -->
+  <rect width="960" height="300" fill="#fbf7f1"/>
+  <rect x="512" y="16"  width="320" height="44" rx="22" fill="#e0f0f3"/>
+  <rect x="512" y="72"  width="448" height="44" rx="22" fill="#c2410c"/>
+  <rect x="512" y="128" width="392" height="44" rx="22" fill="#1b1510"/>
+  <rect x="512" y="184" width="448" height="44" rx="22" fill="#0d6a76"/>
+  <rect x="512" y="240" width="236" height="44" rx="22" fill="#7b2d5e"/>
+  <path d="M512 -10A160 160 0 0 1 512 310"  fill="none" stroke="#fbf7f1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M512 -70A220 220 0 0 1 512 370"  fill="none" stroke="#fbf7f1" stroke-width="8" stroke-linecap="round"/>
+  <path d="M512 -130A280 280 0 0 1 512 430" fill="none" stroke="#fbf7f1" stroke-width="8" stroke-linecap="round"/>
+  <text x="56" y="188" font-family="Bricolage Grotesque, system-ui, sans-serif" font-weight="700" font-size="120" letter-spacing="-4.8" fill="#1b1510">swara</text>
+  <text x="56" y="218" font-family="Hanken Grotesk, system-ui, sans-serif" font-weight="500" font-size="14" fill="#6f6254">Twenty seconds tells you how you are.</text>
+</svg>

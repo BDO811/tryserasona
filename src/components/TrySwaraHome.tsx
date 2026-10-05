@@ -137,6 +137,19 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
             </div>
           ))}
         </motion.div>
+
+        {/* Brand signature: the design system's Cover band graphic, the standing
+            Swara mark for anywhere that needs more presence than the small icon. */}
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          src={asset("brand/swara-signature-bands.svg")}
+          alt=""
+          aria-hidden="true"
+          className="mt-20 h-16 w-auto max-w-full md:h-20"
+        />
       </div>
     </div>
   );
