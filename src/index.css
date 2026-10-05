@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Swara Design System */
+
+@layer base {
+  :root {
+    /* Core palette - Swara warm paper + ember */
+    --background: 36 56% 96%;
+    --foreground: 27 26% 8%;
+
+    /* Paper surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 27 26% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 27 26% 8%;
+
+    /* Ember primary (Swara's one-accent-per-screen color) */
+    --primary: 17 88% 40%;
+    --primary-foreground: 30 100% 98%;
+
+    /* Sunken paper */
+    --secondary: 37 41% 91%;
+    --secondary-foreground: 30 16% 29%;
+
+    --muted: 37 41% 91%;
+    --muted-foreground: 31 14% 38%;
+
+    --accent: 17 88% 40%;
+    --accent-foreground: 30 100% 98%;
+
+    --destructive: 0 67% 38%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 37 33% 86%;
+    --input: 37 41% 91%;
+    --ring: 17 88% 40%;
+
+    --radius: 1.25rem;
+
+    /* Custom tokens - now ember-based, not cyan */
+    --cyan-glow: 17 88% 40%;
+    --glass-bg: 0 0% 100% / 0.65;
+    --glass-border: 17 88% 40% / 0.1;
+
+    /* Sidebar - light theme */
+    --sidebar-background: 37 41% 91%;
+    --sidebar-foreground: 27 26% 8%;
+    --sidebar-primary: 17 88% 40%;
+    --sidebar-primary-foreground: 30 100% 98%;
+    --sidebar-accent: 37 33% 86%;
+    --sidebar-accent-foreground: 27 26% 8%;
+    --sidebar-border: 37 33% 86%;
+    --sidebar-ring: 17 88% 40%;
+  }
+
+  .dark {
+    --background: 30 18% 7%;
+    --foreground: 33 44% 95%;
+    --card: 30 15% 10%;
+    --card-foreground: 33 44% 95%;
+    --popover: 30 15% 10%;
+    --popover-foreground: 33 44% 95%;
+    --primary: 21 100% 65%;
+    --primary-foreground: 27 26% 8%;
+    --secondary: 30 18% 4%;
+    --secondary-foreground: 31 17% 72%;
+    --muted: 30 18% 4%;
+    --muted-foreground: 32 12% 56%;
+    --accent: 21 100% 65%;
+    --accent-foreground: 27 26% 8%;
+    --destructive: 5 100% 76%;
+    --destructive-foreground: 27 26% 8%;
+    --border: 30 16% 15%;
+    --input: 30 18% 4%;
+    --ring: 21 100% 65%;
+    --cyan-glow: 21 100% 65%;
+    --glass-bg: 30 15% 10% / 0.65;
+    --glass-border: 21 100% 65% / 0.1;
+    --sidebar-background: 30 18% 4%;
+    --sidebar-foreground: 33 44% 95%;
+    --sidebar-primary: 21 100% 65%;
+    --sidebar-primary-foreground: 27 26% 8%;
+    --sidebar-accent: 30 16% 15%;
+    --sidebar-accent-foreground: 33 44% 95%;
+    --sidebar-border: 30 16% 15%;
+    --sidebar-ring: 21 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Smoked Glass Card */
+  .glass-card {
+    @apply relative overflow-hidden rounded-2xl;
+    background: hsla(var(--glass-bg));
+    border: 1px solid hsla(var(--glass-border));
+    backdrop-filter: blur(20px);
+  }
+  
+  /* Cyan Glow Effect */
+  .cyan-glow {
+    box-shadow: 
+      0 0 20px hsla(var(--cyan-glow) / 0.3),
+      0 0 40px hsla(var(--cyan-glow) / 0.2),
+      0 0 60px hsla(var(--cyan-glow) / 0.1);
+  }
+  
+  .cyan-glow-text {
+    text-shadow: 
+      0 0 10px hsla(var(--cyan-glow) / 0.8),
+      0 0 20px hsla(var(--cyan-glow) / 0.5),
+      0 0 30px hsla(var(--cyan-glow) / 0.3);
+  }
+  
+  /* Luxury Typography */
+  .luxury-header {
+    @apply uppercase tracking-[0.3em] font-light;
+    letter-spacing: 0.3em;
+  }
+  
+  .luxury-subheader {
+    @apply uppercase tracking-[0.15em] font-medium text-sm;
+  }
+  
+  /* Progress Line */
+  .progress-line {
+    @apply h-px w-full;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      hsl(var(--primary)) 50%,
+      transparent 100%
+    );
+  }
+  
+  /* Terminal Text */
+  .terminal-text {
+    @apply font-mono text-sm tracking-wider;
+    color: hsl(var(--primary));
+  }
+}
+
+@layer utilities {
+  /* Fluid color cycling - 40s loop for ultra-premium feel */
+  /* Each color fades in and out, overlapping for smooth blends */
+  
+  @keyframes fade-cyan {
+    0%, 100% { opacity: 1; }
+    12.5% { opacity: 0.5; }
+    25%, 75% { opacity: 0; }
+    87.5% { opacity: 0.5; }
+  }
+  
+  @keyframes fade-amethyst {
+    0% { opacity: 0; }
+    12.5% { opacity: 0.5; }
+    25% { opacity: 1; }
+    37.5% { opacity: 0.5; }
+    50%, 100% { opacity: 0; }
+  }
+  
+  @keyframes fade-amber {
+    0%, 25% { opacity: 0; }
+    37.5% { opacity: 0.5; }
+    50% { opacity: 1; }
+    62.5% { opacity: 0.5; }
+    75%, 100% { opacity: 0; }
+  }
+  
+  @keyframes fade-teal {
+    0%, 50% { opacity: 0; }
+    62.5% { opacity: 0.5; }
+    75% { opacity: 1; }
+    87.5% { opacity: 0.5; }
+    100% { opacity: 0; }
+  }
+
+  /* Orb glow layers */
+  .orb-glow-cyan {
+    background: #1E5631;
+    opacity: 1;
+    animation: fade-cyan 40s ease-in-out infinite;
+  }
+  
+  .orb-glow-amethyst {
+    background: #9D00FF;
+    opacity: 0;
+    animation: fade-amethyst 40s ease-in-out infinite;
+  }
+  
+  .orb-glow-amber {
+    background: #FFB800;
+    opacity: 0;
+    animation: fade-amber 40s ease-in-out infinite;
+  }
+  
+  .orb-glow-teal {
+    background: #00FF94;
+    opacity: 0;
+    animation: fade-teal 40s ease-in-out infinite;
+  }
+
+  /* Orb core layers with radial gradients */
+  .orb-core-cyan {
+    background: radial-gradient(circle, rgba(30, 86, 49, 1) 0%, rgba(30, 86, 49, 0.6) 45%, transparent 70%);
+    box-shadow: 0 0 70px 25px rgba(30, 86, 49, 0.8), 0 0 120px 50px rgba(30, 86, 49, 0.5);
+    animation: fade-cyan 40s ease-in-out infinite;
+  }
+  
+  .orb-core-amethyst {
+    background: radial-gradient(circle, rgba(157, 0, 255, 1) 0%, rgba(157, 0, 255, 0.6) 45%, transparent 70%);
+    box-shadow: 0 0 70px 25px rgba(157, 0, 255, 0.8), 0 0 120px 50px rgba(157, 0, 255, 0.5);
+    opacity: 0;
+    animation: fade-amethyst 40s ease-in-out infinite;
+  }
+  
+  .orb-core-amber {
+    background: radial-gradient(circle, rgba(255, 184, 0, 1) 0%, rgba(255, 184, 0, 0.6) 45%, transparent 70%);
+    box-shadow: 0 0 70px 25px rgba(255, 184, 0, 0.8), 0 0 120px 50px rgba(255, 184, 0, 0.5);
+    opacity: 0;
+    animation: fade-amber 40s ease-in-out infinite;
+  }
+  
+  .orb-core-teal {
+    background: radial-gradient(circle, rgba(0, 255, 148, 1) 0%, rgba(0, 255, 148, 0.6) 45%, transparent 70%);
+    box-shadow: 0 0 70px 25px rgba(0, 255, 148, 0.8), 0 0 120px 50px rgba(0, 255, 148, 0.5);
+    opacity: 0;
+    animation: fade-teal 40s ease-in-out infinite;
+  }
+
+  /* Particles inherit blended color - synced with orb fade timing */
+  .orb-particle {
+    background: #1E5631;
+    animation: particle-color 40s linear infinite;
+  }
+  
+  @keyframes particle-color {
+    0%, 6.25% { background: #1E5631; }
+    12.5% { background: #4F78FF; }
+    18.75%, 31.25% { background: #9D00FF; }
+    37.5% { background: #CE5C80; }
+    43.75%, 56.25% { background: #FFB800; }
+    62.5% { background: #80DC4A; }
+    68.75%, 81.25% { background: #00FF94; }
+    87.5% { background: #00F8C5; }
+    93.75%, 100% { background: #1E5631; }
+  }
+
+  /* Ring glow follows color - synced timing */
+  .orb-ring-glow {
+    box-shadow: 0 0 20px currentColor;
+    animation: ring-color 40s linear infinite;
+  }
+  
+  @keyframes ring-color {
+    0%, 6.25% { border-color: rgba(30, 86, 49, 0.2); box-shadow: 0 0 20px rgba(30, 86, 49, 0.1); }
+    18.75%, 31.25% { border-color: rgba(157, 0, 255, 0.2); box-shadow: 0 0 20px rgba(157, 0, 255, 0.1); }
+    43.75%, 56.25% { border-color: rgba(255, 184, 0, 0.2); box-shadow: 0 0 20px rgba(255, 184, 0, 0.1); }
+    68.75%, 81.25% { border-color: rgba(0, 255, 148, 0.2); box-shadow: 0 0 20px rgba(0, 255, 148, 0.1); }
+    93.75%, 100% { border-color: rgba(30, 86, 49, 0.2); box-shadow: 0 0 20px rgba(30, 86, 49, 0.1); }
+  }
+
+
+  /* Galaxy Rotation - slow continuous spin */
+  @keyframes galaxy-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-galaxy-rotate {
+    animation: galaxy-rotate 60s linear infinite;
+  }
+
+  /* Breathing animation for orb */
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+  }
+  
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+  
+  /* Pulse ring animation */
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+  
+  .animate-pulse-ring {
+    animation: pulse-ring 2s ease-out infinite;
+  }
+  
+  /* Fade up animation */
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+  }
+
+  /*
+    Scale highlight: the option a result actually landed on breathes, while the
+    ones it did not sit at half opacity. Colour and tints arrive as custom
+    properties so one keyframe serves every band and rung.
+
+    A breathing ring rather than a blink on purpose. A hard flash at this type
+    size is a photosensitivity hazard and reads as an error state, which is the
+    opposite of what marking your position means.
+  */
+  @keyframes scale-breathe {
+    0%, 100% {
+      box-shadow: 0 0 0 1px var(--scale-color), 0 0 0 0 transparent;
+      background: var(--scale-tint-lo);
+    }
+    50% {
+      box-shadow: 0 0 0 1px var(--scale-color), 0 0 var(--scale-glow, 9px) 1px var(--scale-color);
+      background: var(--scale-tint-hi);
+    }
+  }
+
+  .animate-scale-breathe {
+    animation: scale-breathe 1.9s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scale-breathe {
+      animation: none;
+      box-shadow: 0 0 0 1px var(--scale-color);
+      background: var(--scale-tint-hi);
+    }
+  }
+
+  /*
+    Body map: a slower, plainer opacity breathe for a row or marker that is
+    off-normal, distinct from .animate-scale-breathe (which runs on every
+    active scale cell regardless of band). This one is conditional — only
+    flagged signals, unfavourable sub-dimensions, and non-normal lab metrics
+    get it — so stillness itself reads as "nothing to flag here."
+  */
+  @keyframes gentle-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.45; }
+  }
+
+  .animate-gentle-blink {
+    animation: gentle-blink 2.8s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-gentle-blink {
+      animation: none;
+      opacity: 1;
+    }
+  }
+}

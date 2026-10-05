@@ -1,0 +1,860 @@
+{
+ "windowRatio": {
+  "Anxiety": {
+   "burstRange": 0.5096,
+   "fullRange": 0.7049,
+   "ratio": 0.723,
+   "n": 16,
+   "spanHours": 46.3
+  },
+  "Cardiovascular Strain": {
+   "burstRange": 0.166,
+   "fullRange": 0.5043,
+   "ratio": 0.329,
+   "n": 8,
+   "spanHours": 44.6
+  },
+  "Cognitive Load": {
+   "burstRange": 0.1967,
+   "fullRange": 0.2003,
+   "ratio": 0.982,
+   "n": 8,
+   "spanHours": 44.6
+  },
+  "Dehydration": {
+   "burstRange": 0.0631,
+   "fullRange": 0.335,
+   "ratio": 0.188,
+   "n": 16,
+   "spanHours": 47.3
+  },
+  "Fatigue": {
+   "burstRange": 0.3191,
+   "fullRange": 0.3508,
+   "ratio": 0.91,
+   "n": 18,
+   "spanHours": 47.3
+  },
+  "Stress": {
+   "burstRange": 0.3446,
+   "fullRange": 0.4032,
+   "ratio": 0.855,
+   "n": 16,
+   "spanHours": 46.3
+  }
+ },
+ "series": {
+  "Metabolic Load": [
+   {
+    "t": "09-07 16:26",
+    "ms": 1788798391358,
+    "model": "tide",
+    "score": 0.8635,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:22",
+    "ms": 1788805361476,
+    "model": "tide",
+    "score": 0.9183,
+    "level": "moderate"
+   }
+  ],
+  "Dehydration": [
+   {
+    "t": "09-07 16:26",
+    "ms": 1788798391358,
+    "model": "tide",
+    "score": 0.393,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:22",
+    "ms": 1788805361476,
+    "model": "tide",
+    "score": 0.2798,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.0895,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:16",
+    "ms": 1788812211068,
+    "model": "pulse",
+    "score": 0.3009,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.0638,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 21:23",
+    "ms": 1788816214217,
+    "model": "pulse",
+    "score": 0.2451,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 17:29",
+    "ms": 1788888557107,
+    "model": "pulse",
+    "score": 0.3426,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:03",
+    "ms": 1788890599638,
+    "model": "pulse",
+    "score": 0.291,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.3357,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:28",
+    "ms": 1788892127216,
+    "model": "apex",
+    "score": 0.3371,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:31",
+    "ms": 1788892287953,
+    "model": "apex",
+    "score": 0.3988,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:39",
+    "ms": 1788892748360,
+    "model": "apex",
+    "score": 0.3692,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.3645,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:27",
+    "ms": 1788917226270,
+    "model": "pulse",
+    "score": 0.0817,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 15:41",
+    "ms": 1788968477478,
+    "model": "pulse",
+    "score": 0.3435,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.3321,
+    "level": "moderate"
+   }
+  ],
+  "Dry Mouth": [
+   {
+    "t": "09-07 16:26",
+    "ms": 1788798391358,
+    "model": "tide",
+    "score": 0.3277,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:22",
+    "ms": 1788805361476,
+    "model": "tide",
+    "score": 0.265,
+    "level": "consider"
+   }
+  ],
+  "Fatigue": [
+   {
+    "t": "09-07 16:26",
+    "ms": 1788798391358,
+    "model": "tide",
+    "score": 0.3127,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 17:25",
+    "ms": 1788801932302,
+    "model": "haven",
+    "score": 0.1372,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 18:20",
+    "ms": 1788805259418,
+    "model": "haven",
+    "score": 0.4584,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:22",
+    "ms": 1788805361476,
+    "model": "tide",
+    "score": 0.3856,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.1324,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:16",
+    "ms": 1788812211068,
+    "model": "pulse",
+    "score": 0.1441,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.126,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 21:23",
+    "ms": 1788816214217,
+    "model": "pulse",
+    "score": 0.3726,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 17:29",
+    "ms": 1788888557107,
+    "model": "pulse",
+    "score": 0.354,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:03",
+    "ms": 1788890599638,
+    "model": "pulse",
+    "score": 0.1076,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.3841,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:28",
+    "ms": 1788892127216,
+    "model": "apex",
+    "score": 0.4402,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:31",
+    "ms": 1788892287953,
+    "model": "apex",
+    "score": 0.4469,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:39",
+    "ms": 1788892748360,
+    "model": "apex",
+    "score": 0.1278,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.2988,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:27",
+    "ms": 1788917226270,
+    "model": "pulse",
+    "score": 0.4472,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:41",
+    "ms": 1788968477478,
+    "model": "pulse",
+    "score": 0.4296,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.1214,
+    "level": "consider"
+   }
+  ],
+  "Iron Deficiency": [
+   {
+    "t": "09-07 16:26",
+    "ms": 1788798391358,
+    "model": "tide",
+    "score": 0.1824,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:22",
+    "ms": 1788805361476,
+    "model": "tide",
+    "score": 0.0462,
+    "level": "low"
+   }
+  ],
+  "Elevated Blood Pressure": [
+   {
+    "t": "09-07 16:26",
+    "ms": 1788798391358,
+    "model": "tide",
+    "score": 0.3442,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 18:22",
+    "ms": 1788805361476,
+    "model": "tide",
+    "score": 0.2527,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:16",
+    "ms": 1788812211068,
+    "model": "pulse",
+    "score": 0.1351,
+    "level": "low"
+   },
+   {
+    "t": "09-07 21:23",
+    "ms": 1788816214217,
+    "model": "pulse",
+    "score": 0.0416,
+    "level": "none"
+   },
+   {
+    "t": "09-08 17:29",
+    "ms": 1788888557107,
+    "model": "pulse",
+    "score": 0.5056,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:27",
+    "ms": 1788917226270,
+    "model": "pulse",
+    "score": 0.3081,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 15:41",
+    "ms": 1788968477478,
+    "model": "pulse",
+    "score": 0.3405,
+    "level": "consider"
+   }
+  ],
+  "Hypervigilance": [
+   {
+    "t": "09-07 17:25",
+    "ms": 1788801932302,
+    "model": "haven",
+    "score": 0.606,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:20",
+    "ms": 1788805259418,
+    "model": "haven",
+    "score": 0.6368,
+    "level": "moderate"
+   }
+  ],
+  "Stress": [
+   {
+    "t": "09-07 17:25",
+    "ms": 1788801932302,
+    "model": "haven",
+    "score": 0.456,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 18:20",
+    "ms": 1788805259418,
+    "model": "haven",
+    "score": 0.135,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.0933,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:16",
+    "ms": 1788812211068,
+    "model": "pulse",
+    "score": 0.1053,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.0767,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 21:23",
+    "ms": 1788816214217,
+    "model": "pulse",
+    "score": 0.0902,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 17:29",
+    "ms": 1788888557107,
+    "model": "pulse",
+    "score": 0.3093,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:03",
+    "ms": 1788890599638,
+    "model": "pulse",
+    "score": 0.4644,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.4454,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:28",
+    "ms": 1788892127216,
+    "model": "apex",
+    "score": 0.3425,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:31",
+    "ms": 1788892287953,
+    "model": "apex",
+    "score": 0.227,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 18:39",
+    "ms": 1788892748360,
+    "model": "apex",
+    "score": 0.1008,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.1052,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 01:27",
+    "ms": 1788917226270,
+    "model": "pulse",
+    "score": 0.3538,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:41",
+    "ms": 1788968477478,
+    "model": "pulse",
+    "score": 0.4799,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.3717,
+    "level": "moderate"
+   }
+  ],
+  "Anxiety": [
+   {
+    "t": "09-07 17:25",
+    "ms": 1788801932302,
+    "model": "haven",
+    "score": 0.1832,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 18:20",
+    "ms": 1788805259418,
+    "model": "haven",
+    "score": 0.6621,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.2741,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:16",
+    "ms": 1788812211068,
+    "model": "pulse",
+    "score": 0.2001,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.2016,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 21:23",
+    "ms": 1788816214217,
+    "model": "pulse",
+    "score": 0.3914,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 17:29",
+    "ms": 1788888557107,
+    "model": "pulse",
+    "score": 0.4657,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:03",
+    "ms": 1788890599638,
+    "model": "pulse",
+    "score": 0.4721,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.7324,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:28",
+    "ms": 1788892127216,
+    "model": "apex",
+    "score": 0.8688,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:31",
+    "ms": 1788892287953,
+    "model": "apex",
+    "score": 0.7529,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:39",
+    "ms": 1788892748360,
+    "model": "apex",
+    "score": 0.3592,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.1639,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 01:27",
+    "ms": 1788917226270,
+    "model": "pulse",
+    "score": 0.1946,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 15:41",
+    "ms": 1788968477478,
+    "model": "pulse",
+    "score": 0.6929,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.5397,
+    "level": "moderate"
+   }
+  ],
+  "Attention Dysregulation": [
+   {
+    "t": "09-07 17:25",
+    "ms": 1788801932302,
+    "model": "haven",
+    "score": 0.1392,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 18:20",
+    "ms": 1788805259418,
+    "model": "haven",
+    "score": 0.2052,
+    "level": "consider"
+   }
+  ],
+  "Mood Disruption": [
+   {
+    "t": "09-07 17:25",
+    "ms": 1788801932302,
+    "model": "haven",
+    "score": 0.1167,
+    "level": "low"
+   },
+   {
+    "t": "09-07 18:20",
+    "ms": 1788805259418,
+    "model": "haven",
+    "score": 0.6177,
+    "level": "moderate"
+   },
+   {
+    "t": "09-07 20:16",
+    "ms": 1788812211068,
+    "model": "pulse",
+    "score": 0.0859,
+    "level": "low"
+   },
+   {
+    "t": "09-07 21:23",
+    "ms": 1788816214217,
+    "model": "pulse",
+    "score": 0.092,
+    "level": "low"
+   },
+   {
+    "t": "09-08 17:29",
+    "ms": 1788888557107,
+    "model": "pulse",
+    "score": 0.2131,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 18:03",
+    "ms": 1788890599638,
+    "model": "pulse",
+    "score": 0.1132,
+    "level": "low"
+   },
+   {
+    "t": "09-09 01:27",
+    "ms": 1788917226270,
+    "model": "pulse",
+    "score": 0.6779,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:41",
+    "ms": 1788968477478,
+    "model": "pulse",
+    "score": 0.588,
+    "level": "moderate"
+   }
+  ],
+  "Cognitive Load": [
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.1955,
+    "level": "consider"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.0726,
+    "level": "low"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.2294,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:28",
+    "ms": 1788892127216,
+    "model": "apex",
+    "score": 0.2597,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:31",
+    "ms": 1788892287953,
+    "model": "apex",
+    "score": 0.0762,
+    "level": "low"
+   },
+   {
+    "t": "09-08 18:39",
+    "ms": 1788892748360,
+    "model": "apex",
+    "score": 0.2729,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.2215,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.2124,
+    "level": "moderate"
+   }
+  ],
+  "Cardiovascular Strain": [
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.1099,
+    "level": "low"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.0358,
+    "level": "none"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.5194,
+    "level": "moderate"
+   },
+   {
+    "t": "09-08 18:28",
+    "ms": 1788892127216,
+    "model": "apex",
+    "score": 0.3741,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 18:31",
+    "ms": 1788892287953,
+    "model": "apex",
+    "score": 0.4279,
+    "level": "consider"
+   },
+   {
+    "t": "09-08 18:39",
+    "ms": 1788892748360,
+    "model": "apex",
+    "score": 0.5401,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.253,
+    "level": "consider"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.2206,
+    "level": "low"
+   }
+  ],
+  "Head Impact": [
+   {
+    "t": "09-07 19:11",
+    "ms": 1788808310180,
+    "model": "apex",
+    "score": 0.0659,
+    "level": "low"
+   },
+   {
+    "t": "09-07 20:37",
+    "ms": 1788813461404,
+    "model": "apex",
+    "score": 0.0032,
+    "level": "none"
+   },
+   {
+    "t": "09-08 18:06",
+    "ms": 1788890811105,
+    "model": "apex",
+    "score": 0.4868,
+    "level": "moderate"
+   },
+   {
+    "t": "09-09 01:19",
+    "ms": 1788916787961,
+    "model": "apex",
+    "score": 0.1625,
+    "level": "low"
+   },
+   {
+    "t": "09-09 15:46",
+    "ms": 1788968776866,
+    "model": "apex",
+    "score": 0.0507,
+    "level": "none"
+   }
+  ]
+ }
+}

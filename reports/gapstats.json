@@ -1,0 +1,33 @@
+{
+ "buckets": {
+  "15 to 60 min": {
+   "n": 30,
+   "medianPct": 47.15,
+   "medianAbs": 0.14085,
+   "bandMovedPct": 43.333333333333336
+  },
+  "under 15 min": {
+   "n": 25,
+   "medianPct": 26.2,
+   "medianAbs": 0.1159,
+   "bandMovedPct": 44.0
+  },
+  "1 to 12 h": {
+   "n": 25,
+   "medianPct": 46.5,
+   "medianAbs": 0.0935,
+   "bandMovedPct": 60.0
+  },
+  "over 12 h": {
+   "n": 18,
+   "medianPct": 54.3,
+   "medianAbs": 0.11645,
+   "bandMovedPct": 66.66666666666667
+  }
+ },
+ "rho": 0.09818997889690084,
+ "n": 98,
+ "medianPctAll": 43.15,
+ "over50": 45,
+ "over100": 19
+}

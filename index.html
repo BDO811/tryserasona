@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swara Voice Check-in</title>
+    <meta name="description" content="Twenty seconds of speech gives a read on how you are doing. Voice check-in by Swara." />
+    <meta name="author" content="Swara" />
+    <link rel="canonical" href="https://tryswara.com/" />
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '24785384794443808');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
+
+    <!--
+      Link previews. Slack, iMessage, LinkedIn and X all read these tags, not
+      DNS, so a stale og:image is what makes a correctly-served page unfurl
+      under the scaffolding tool's brand rather than this one. That is what
+      these tags used to point at, and why the fix is here and not in the zone
+      file.
+
+      og:image must be an absolute URL on a public host: relative paths resolve
+      against the scraper, not the page, and the preview silently falls back to
+      nothing.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Swara" />
+    <meta property="og:url" content="https://tryswara.com/" />
+    <meta property="og:title" content="Swara Voice Check-in" />
+    <meta property="og:description" content="Twenty seconds of speech gives a read on how you are doing. Voice check-in by Swara." />
+    <meta property="og:image" content="https://tryswara.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Swara Voice Check-in" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Swara Voice Check-in" />
+    <meta name="twitter:description" content="Twenty seconds of speech gives a read on how you are doing. Voice check-in by Swara." />
+    <meta name="twitter:image" content="https://tryswara.com/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="/brand/swara-app-icon.svg" />
+  </head>
+
+  <body>
+    <!-- Meta Pixel noscript fallback (must be in <body>, not <head>) -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+           src="https://www.facebook.com/tr?id=24785384794443808&ev=PageView&noscript=1" />
+    </noscript>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "notify-lead",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.9.0"
+  }
+}

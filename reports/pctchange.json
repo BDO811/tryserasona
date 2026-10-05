@@ -1,0 +1,1262 @@
+{
+ "Fatigue": [
+  {
+   "t": "09-07 16:26",
+   "ms": 1788798391358,
+   "model": "tide",
+   "score": 0.3127,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 17:25",
+   "ms": 1788801932302,
+   "model": "haven",
+   "score": 0.1372,
+   "level": "consider",
+   "absChange": -0.1755,
+   "pctChange": -56.1,
+   "minsSincePrev": 59.0,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 18:20",
+   "ms": 1788805259418,
+   "model": "haven",
+   "score": 0.4584,
+   "level": "moderate",
+   "absChange": 0.3212,
+   "pctChange": 234.1,
+   "minsSincePrev": 55.5,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 18:22",
+   "ms": 1788805361476,
+   "model": "tide",
+   "score": 0.3856,
+   "level": "moderate",
+   "absChange": -0.0728,
+   "pctChange": -15.9,
+   "minsSincePrev": 1.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.1324,
+   "level": "consider",
+   "absChange": -0.2532,
+   "pctChange": -65.7,
+   "minsSincePrev": 49.1,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 20:16",
+   "ms": 1788812211068,
+   "model": "pulse",
+   "score": 0.1441,
+   "level": "consider",
+   "absChange": 0.0117,
+   "pctChange": 8.8,
+   "minsSincePrev": 65.0,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.126,
+   "level": "consider",
+   "absChange": -0.0181,
+   "pctChange": -12.6,
+   "minsSincePrev": 20.8,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 21:23",
+   "ms": 1788816214217,
+   "model": "pulse",
+   "score": 0.3726,
+   "level": "moderate",
+   "absChange": 0.2466,
+   "pctChange": 195.7,
+   "minsSincePrev": 45.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 17:29",
+   "ms": 1788888557107,
+   "model": "pulse",
+   "score": 0.354,
+   "level": "moderate",
+   "absChange": -0.0186,
+   "pctChange": -5.0,
+   "minsSincePrev": 1205.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:03",
+   "ms": 1788890599638,
+   "model": "pulse",
+   "score": 0.1076,
+   "level": "consider",
+   "absChange": -0.2464,
+   "pctChange": -69.6,
+   "minsSincePrev": 34.0,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.3841,
+   "level": "moderate",
+   "absChange": 0.2765,
+   "pctChange": 257.0,
+   "minsSincePrev": 3.5,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:28",
+   "ms": 1788892127216,
+   "model": "apex",
+   "score": 0.4402,
+   "level": "moderate",
+   "absChange": 0.0561,
+   "pctChange": 14.6,
+   "minsSincePrev": 21.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:31",
+   "ms": 1788892287953,
+   "model": "apex",
+   "score": 0.4469,
+   "level": "moderate",
+   "absChange": 0.0067,
+   "pctChange": 1.5,
+   "minsSincePrev": 2.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:39",
+   "ms": 1788892748360,
+   "model": "apex",
+   "score": 0.1278,
+   "level": "consider",
+   "absChange": -0.3191,
+   "pctChange": -71.4,
+   "minsSincePrev": 7.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.2988,
+   "level": "moderate",
+   "absChange": 0.171,
+   "pctChange": 133.8,
+   "minsSincePrev": 400.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:27",
+   "ms": 1788917226270,
+   "model": "pulse",
+   "score": 0.4472,
+   "level": "moderate",
+   "absChange": 0.1484,
+   "pctChange": 49.7,
+   "minsSincePrev": 7.3,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 15:41",
+   "ms": 1788968477478,
+   "model": "pulse",
+   "score": 0.4296,
+   "level": "moderate",
+   "absChange": -0.0176,
+   "pctChange": -3.9,
+   "minsSincePrev": 854.2,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.1214,
+   "level": "consider",
+   "absChange": -0.3082,
+   "pctChange": -71.7,
+   "minsSincePrev": 5.0,
+   "bandMoved": true
+  }
+ ],
+ "Dehydration": [
+  {
+   "t": "09-07 16:26",
+   "ms": 1788798391358,
+   "model": "tide",
+   "score": 0.393,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:22",
+   "ms": 1788805361476,
+   "model": "tide",
+   "score": 0.2798,
+   "level": "consider",
+   "absChange": -0.1132,
+   "pctChange": -28.8,
+   "minsSincePrev": 116.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.0895,
+   "level": "consider",
+   "absChange": -0.1903,
+   "pctChange": -68.0,
+   "minsSincePrev": 49.1,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 20:16",
+   "ms": 1788812211068,
+   "model": "pulse",
+   "score": 0.3009,
+   "level": "moderate",
+   "absChange": 0.2114,
+   "pctChange": 236.2,
+   "minsSincePrev": 65.0,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.0638,
+   "level": "consider",
+   "absChange": -0.2371,
+   "pctChange": -78.8,
+   "minsSincePrev": 20.8,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 21:23",
+   "ms": 1788816214217,
+   "model": "pulse",
+   "score": 0.2451,
+   "level": "consider",
+   "absChange": 0.1813,
+   "pctChange": 284.2,
+   "minsSincePrev": 45.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 17:29",
+   "ms": 1788888557107,
+   "model": "pulse",
+   "score": 0.3426,
+   "level": "moderate",
+   "absChange": 0.0975,
+   "pctChange": 39.8,
+   "minsSincePrev": 1205.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:03",
+   "ms": 1788890599638,
+   "model": "pulse",
+   "score": 0.291,
+   "level": "consider",
+   "absChange": -0.0516,
+   "pctChange": -15.1,
+   "minsSincePrev": 34.0,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.3357,
+   "level": "moderate",
+   "absChange": 0.0447,
+   "pctChange": 15.4,
+   "minsSincePrev": 3.5,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:28",
+   "ms": 1788892127216,
+   "model": "apex",
+   "score": 0.3371,
+   "level": "moderate",
+   "absChange": 0.0014,
+   "pctChange": 0.4,
+   "minsSincePrev": 21.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:31",
+   "ms": 1788892287953,
+   "model": "apex",
+   "score": 0.3988,
+   "level": "moderate",
+   "absChange": 0.0617,
+   "pctChange": 18.3,
+   "minsSincePrev": 2.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:39",
+   "ms": 1788892748360,
+   "model": "apex",
+   "score": 0.3692,
+   "level": "moderate",
+   "absChange": -0.0296,
+   "pctChange": -7.4,
+   "minsSincePrev": 7.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.3645,
+   "level": "moderate",
+   "absChange": -0.0047,
+   "pctChange": -1.3,
+   "minsSincePrev": 400.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 01:27",
+   "ms": 1788917226270,
+   "model": "pulse",
+   "score": 0.0817,
+   "level": "consider",
+   "absChange": -0.2828,
+   "pctChange": -77.6,
+   "minsSincePrev": 7.3,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:41",
+   "ms": 1788968477478,
+   "model": "pulse",
+   "score": 0.3435,
+   "level": "moderate",
+   "absChange": 0.2618,
+   "pctChange": 320.4,
+   "minsSincePrev": 854.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.3321,
+   "level": "moderate",
+   "absChange": -0.0114,
+   "pctChange": -3.3,
+   "minsSincePrev": 5.0,
+   "bandMoved": false
+  }
+ ],
+ "Stress": [
+  {
+   "t": "09-07 17:25",
+   "ms": 1788801932302,
+   "model": "haven",
+   "score": 0.456,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:20",
+   "ms": 1788805259418,
+   "model": "haven",
+   "score": 0.135,
+   "level": "consider",
+   "absChange": -0.321,
+   "pctChange": -70.4,
+   "minsSincePrev": 55.5,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.0933,
+   "level": "consider",
+   "absChange": -0.0417,
+   "pctChange": -30.9,
+   "minsSincePrev": 50.8,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 20:16",
+   "ms": 1788812211068,
+   "model": "pulse",
+   "score": 0.1053,
+   "level": "consider",
+   "absChange": 0.012,
+   "pctChange": 12.9,
+   "minsSincePrev": 65.0,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.0767,
+   "level": "consider",
+   "absChange": -0.0286,
+   "pctChange": -27.2,
+   "minsSincePrev": 20.8,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 21:23",
+   "ms": 1788816214217,
+   "model": "pulse",
+   "score": 0.0902,
+   "level": "consider",
+   "absChange": 0.0135,
+   "pctChange": 17.6,
+   "minsSincePrev": 45.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 17:29",
+   "ms": 1788888557107,
+   "model": "pulse",
+   "score": 0.3093,
+   "level": "moderate",
+   "absChange": 0.2191,
+   "pctChange": 242.9,
+   "minsSincePrev": 1205.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:03",
+   "ms": 1788890599638,
+   "model": "pulse",
+   "score": 0.4644,
+   "level": "moderate",
+   "absChange": 0.1551,
+   "pctChange": 50.1,
+   "minsSincePrev": 34.0,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.4454,
+   "level": "moderate",
+   "absChange": -0.019,
+   "pctChange": -4.1,
+   "minsSincePrev": 3.5,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:28",
+   "ms": 1788892127216,
+   "model": "apex",
+   "score": 0.3425,
+   "level": "moderate",
+   "absChange": -0.1029,
+   "pctChange": -23.1,
+   "minsSincePrev": 21.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:31",
+   "ms": 1788892287953,
+   "model": "apex",
+   "score": 0.227,
+   "level": "consider",
+   "absChange": -0.1155,
+   "pctChange": -33.7,
+   "minsSincePrev": 2.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:39",
+   "ms": 1788892748360,
+   "model": "apex",
+   "score": 0.1008,
+   "level": "consider",
+   "absChange": -0.1262,
+   "pctChange": -55.6,
+   "minsSincePrev": 7.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.1052,
+   "level": "consider",
+   "absChange": 0.0044,
+   "pctChange": 4.4,
+   "minsSincePrev": 400.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 01:27",
+   "ms": 1788917226270,
+   "model": "pulse",
+   "score": 0.3538,
+   "level": "moderate",
+   "absChange": 0.2486,
+   "pctChange": 236.3,
+   "minsSincePrev": 7.3,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:41",
+   "ms": 1788968477478,
+   "model": "pulse",
+   "score": 0.4799,
+   "level": "moderate",
+   "absChange": 0.1261,
+   "pctChange": 35.6,
+   "minsSincePrev": 854.2,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.3717,
+   "level": "moderate",
+   "absChange": -0.1082,
+   "pctChange": -22.5,
+   "minsSincePrev": 5.0,
+   "bandMoved": false
+  }
+ ],
+ "Anxiety": [
+  {
+   "t": "09-07 17:25",
+   "ms": 1788801932302,
+   "model": "haven",
+   "score": 0.1832,
+   "level": "consider",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:20",
+   "ms": 1788805259418,
+   "model": "haven",
+   "score": 0.6621,
+   "level": "moderate",
+   "absChange": 0.4789,
+   "pctChange": 261.4,
+   "minsSincePrev": 55.5,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.2741,
+   "level": "consider",
+   "absChange": -0.388,
+   "pctChange": -58.6,
+   "minsSincePrev": 50.8,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 20:16",
+   "ms": 1788812211068,
+   "model": "pulse",
+   "score": 0.2001,
+   "level": "consider",
+   "absChange": -0.074,
+   "pctChange": -27.0,
+   "minsSincePrev": 65.0,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.2016,
+   "level": "consider",
+   "absChange": 0.0015,
+   "pctChange": 0.7,
+   "minsSincePrev": 20.8,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 21:23",
+   "ms": 1788816214217,
+   "model": "pulse",
+   "score": 0.3914,
+   "level": "consider",
+   "absChange": 0.1898,
+   "pctChange": 94.1,
+   "minsSincePrev": 45.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 17:29",
+   "ms": 1788888557107,
+   "model": "pulse",
+   "score": 0.4657,
+   "level": "moderate",
+   "absChange": 0.0743,
+   "pctChange": 19.0,
+   "minsSincePrev": 1205.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:03",
+   "ms": 1788890599638,
+   "model": "pulse",
+   "score": 0.4721,
+   "level": "moderate",
+   "absChange": 0.0064,
+   "pctChange": 1.4,
+   "minsSincePrev": 34.0,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.7324,
+   "level": "moderate",
+   "absChange": 0.2603,
+   "pctChange": 55.1,
+   "minsSincePrev": 3.5,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:28",
+   "ms": 1788892127216,
+   "model": "apex",
+   "score": 0.8688,
+   "level": "moderate",
+   "absChange": 0.1364,
+   "pctChange": 18.6,
+   "minsSincePrev": 21.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:31",
+   "ms": 1788892287953,
+   "model": "apex",
+   "score": 0.7529,
+   "level": "moderate",
+   "absChange": -0.1159,
+   "pctChange": -13.3,
+   "minsSincePrev": 2.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:39",
+   "ms": 1788892748360,
+   "model": "apex",
+   "score": 0.3592,
+   "level": "consider",
+   "absChange": -0.3937,
+   "pctChange": -52.3,
+   "minsSincePrev": 7.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.1639,
+   "level": "consider",
+   "absChange": -0.1953,
+   "pctChange": -54.4,
+   "minsSincePrev": 400.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 01:27",
+   "ms": 1788917226270,
+   "model": "pulse",
+   "score": 0.1946,
+   "level": "consider",
+   "absChange": 0.0307,
+   "pctChange": 18.7,
+   "minsSincePrev": 7.3,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 15:41",
+   "ms": 1788968477478,
+   "model": "pulse",
+   "score": 0.6929,
+   "level": "moderate",
+   "absChange": 0.4983,
+   "pctChange": 256.1,
+   "minsSincePrev": 854.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.5397,
+   "level": "moderate",
+   "absChange": -0.1532,
+   "pctChange": -22.1,
+   "minsSincePrev": 5.0,
+   "bandMoved": false
+  }
+ ],
+ "Mood Disruption": [
+  {
+   "t": "09-07 17:25",
+   "ms": 1788801932302,
+   "model": "haven",
+   "score": 0.1167,
+   "level": "low",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:20",
+   "ms": 1788805259418,
+   "model": "haven",
+   "score": 0.6177,
+   "level": "moderate",
+   "absChange": 0.501,
+   "pctChange": 429.3,
+   "minsSincePrev": 55.5,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 20:16",
+   "ms": 1788812211068,
+   "model": "pulse",
+   "score": 0.0859,
+   "level": "low",
+   "absChange": -0.5318,
+   "pctChange": -86.1,
+   "minsSincePrev": 115.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 21:23",
+   "ms": 1788816214217,
+   "model": "pulse",
+   "score": 0.092,
+   "level": "low",
+   "absChange": 0.0061,
+   "pctChange": 7.1,
+   "minsSincePrev": 66.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 17:29",
+   "ms": 1788888557107,
+   "model": "pulse",
+   "score": 0.2131,
+   "level": "consider",
+   "absChange": 0.1211,
+   "pctChange": 131.6,
+   "minsSincePrev": 1205.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:03",
+   "ms": 1788890599638,
+   "model": "pulse",
+   "score": 0.1132,
+   "level": "low",
+   "absChange": -0.0999,
+   "pctChange": -46.9,
+   "minsSincePrev": 34.0,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:27",
+   "ms": 1788917226270,
+   "model": "pulse",
+   "score": 0.6779,
+   "level": "moderate",
+   "absChange": 0.5647,
+   "pctChange": 498.9,
+   "minsSincePrev": 443.8,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:41",
+   "ms": 1788968477478,
+   "model": "pulse",
+   "score": 0.588,
+   "level": "moderate",
+   "absChange": -0.0899,
+   "pctChange": -13.3,
+   "minsSincePrev": 854.2,
+   "bandMoved": false
+  }
+ ],
+ "Cognitive Load": [
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.1955,
+   "level": "consider",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.0726,
+   "level": "low",
+   "absChange": -0.1229,
+   "pctChange": -62.9,
+   "minsSincePrev": 85.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.2294,
+   "level": "moderate",
+   "absChange": 0.1568,
+   "pctChange": 216.0,
+   "minsSincePrev": 1289.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:28",
+   "ms": 1788892127216,
+   "model": "apex",
+   "score": 0.2597,
+   "level": "moderate",
+   "absChange": 0.0303,
+   "pctChange": 13.2,
+   "minsSincePrev": 21.9,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:31",
+   "ms": 1788892287953,
+   "model": "apex",
+   "score": 0.0762,
+   "level": "low",
+   "absChange": -0.1835,
+   "pctChange": -70.7,
+   "minsSincePrev": 2.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:39",
+   "ms": 1788892748360,
+   "model": "apex",
+   "score": 0.2729,
+   "level": "moderate",
+   "absChange": 0.1967,
+   "pctChange": 258.1,
+   "minsSincePrev": 7.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.2215,
+   "level": "moderate",
+   "absChange": -0.0514,
+   "pctChange": -18.8,
+   "minsSincePrev": 400.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.2124,
+   "level": "moderate",
+   "absChange": -0.0091,
+   "pctChange": -4.1,
+   "minsSincePrev": 866.5,
+   "bandMoved": false
+  }
+ ],
+ "Cardiovascular Strain": [
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.1099,
+   "level": "low",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.0358,
+   "level": "none",
+   "absChange": -0.0741,
+   "pctChange": -67.4,
+   "minsSincePrev": 85.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.5194,
+   "level": "moderate",
+   "absChange": 0.4836,
+   "pctChange": 1350.8,
+   "minsSincePrev": 1289.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:28",
+   "ms": 1788892127216,
+   "model": "apex",
+   "score": 0.3741,
+   "level": "consider",
+   "absChange": -0.1453,
+   "pctChange": -28.0,
+   "minsSincePrev": 21.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:31",
+   "ms": 1788892287953,
+   "model": "apex",
+   "score": 0.4279,
+   "level": "consider",
+   "absChange": 0.0538,
+   "pctChange": 14.4,
+   "minsSincePrev": 2.7,
+   "bandMoved": false
+  },
+  {
+   "t": "09-08 18:39",
+   "ms": 1788892748360,
+   "model": "apex",
+   "score": 0.5401,
+   "level": "moderate",
+   "absChange": 0.1122,
+   "pctChange": 26.2,
+   "minsSincePrev": 7.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.253,
+   "level": "consider",
+   "absChange": -0.2871,
+   "pctChange": -53.2,
+   "minsSincePrev": 400.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.2206,
+   "level": "low",
+   "absChange": -0.0324,
+   "pctChange": -12.8,
+   "minsSincePrev": 866.5,
+   "bandMoved": true
+  }
+ ],
+ "Elevated Blood Pressure": [
+  {
+   "t": "09-07 16:26",
+   "ms": 1788798391358,
+   "model": "tide",
+   "score": 0.3442,
+   "level": "consider",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:22",
+   "ms": 1788805361476,
+   "model": "tide",
+   "score": 0.2527,
+   "level": "consider",
+   "absChange": -0.0915,
+   "pctChange": -26.6,
+   "minsSincePrev": 116.2,
+   "bandMoved": false
+  },
+  {
+   "t": "09-07 20:16",
+   "ms": 1788812211068,
+   "model": "pulse",
+   "score": 0.1351,
+   "level": "low",
+   "absChange": -0.1176,
+   "pctChange": -46.5,
+   "minsSincePrev": 114.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-07 21:23",
+   "ms": 1788816214217,
+   "model": "pulse",
+   "score": 0.0416,
+   "level": "none",
+   "absChange": -0.0935,
+   "pctChange": -69.2,
+   "minsSincePrev": 66.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 17:29",
+   "ms": 1788888557107,
+   "model": "pulse",
+   "score": 0.5056,
+   "level": "moderate",
+   "absChange": 0.464,
+   "pctChange": 1115.4,
+   "minsSincePrev": 1205.7,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:27",
+   "ms": 1788917226270,
+   "model": "pulse",
+   "score": 0.3081,
+   "level": "consider",
+   "absChange": -0.1975,
+   "pctChange": -39.1,
+   "minsSincePrev": 477.8,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:41",
+   "ms": 1788968477478,
+   "model": "pulse",
+   "score": 0.3405,
+   "level": "consider",
+   "absChange": 0.0324,
+   "pctChange": 10.5,
+   "minsSincePrev": 854.2,
+   "bandMoved": false
+  }
+ ],
+ "Head Impact": [
+  {
+   "t": "09-07 19:11",
+   "ms": 1788808310180,
+   "model": "apex",
+   "score": 0.0659,
+   "level": "low",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 20:37",
+   "ms": 1788813461404,
+   "model": "apex",
+   "score": 0.0032,
+   "level": "none",
+   "absChange": -0.0627,
+   "pctChange": -95.1,
+   "minsSincePrev": 85.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-08 18:06",
+   "ms": 1788890811105,
+   "model": "apex",
+   "score": 0.4868,
+   "level": "moderate",
+   "absChange": 0.4836,
+   "pctChange": 15112.5,
+   "minsSincePrev": 1289.2,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 01:19",
+   "ms": 1788916787961,
+   "model": "apex",
+   "score": 0.1625,
+   "level": "low",
+   "absChange": -0.3243,
+   "pctChange": -66.6,
+   "minsSincePrev": 432.9,
+   "bandMoved": true
+  },
+  {
+   "t": "09-09 15:46",
+   "ms": 1788968776866,
+   "model": "apex",
+   "score": 0.0507,
+   "level": "none",
+   "absChange": -0.1118,
+   "pctChange": -68.8,
+   "minsSincePrev": 866.5,
+   "bandMoved": true
+  }
+ ],
+ "Metabolic Load": [
+  {
+   "t": "09-07 16:26",
+   "ms": 1788798391358,
+   "model": "tide",
+   "score": 0.8635,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:22",
+   "ms": 1788805361476,
+   "model": "tide",
+   "score": 0.9183,
+   "level": "moderate",
+   "absChange": 0.0548,
+   "pctChange": 6.3,
+   "minsSincePrev": 116.2,
+   "bandMoved": false
+  }
+ ],
+ "Dry Mouth": [
+  {
+   "t": "09-07 16:26",
+   "ms": 1788798391358,
+   "model": "tide",
+   "score": 0.3277,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:22",
+   "ms": 1788805361476,
+   "model": "tide",
+   "score": 0.265,
+   "level": "consider",
+   "absChange": -0.0627,
+   "pctChange": -19.1,
+   "minsSincePrev": 116.2,
+   "bandMoved": true
+  }
+ ],
+ "Iron Deficiency": [
+  {
+   "t": "09-07 16:26",
+   "ms": 1788798391358,
+   "model": "tide",
+   "score": 0.1824,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:22",
+   "ms": 1788805361476,
+   "model": "tide",
+   "score": 0.0462,
+   "level": "low",
+   "absChange": -0.1362,
+   "pctChange": -74.7,
+   "minsSincePrev": 116.2,
+   "bandMoved": true
+  }
+ ],
+ "Hypervigilance": [
+  {
+   "t": "09-07 17:25",
+   "ms": 1788801932302,
+   "model": "haven",
+   "score": 0.606,
+   "level": "moderate",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:20",
+   "ms": 1788805259418,
+   "model": "haven",
+   "score": 0.6368,
+   "level": "moderate",
+   "absChange": 0.0308,
+   "pctChange": 5.1,
+   "minsSincePrev": 55.5,
+   "bandMoved": false
+  }
+ ],
+ "Attention Dysregulation": [
+  {
+   "t": "09-07 17:25",
+   "ms": 1788801932302,
+   "model": "haven",
+   "score": 0.1392,
+   "level": "consider",
+   "absChange": null,
+   "pctChange": null,
+   "minsSincePrev": null,
+   "bandMoved": null
+  },
+  {
+   "t": "09-07 18:20",
+   "ms": 1788805259418,
+   "model": "haven",
+   "score": 0.2052,
+   "level": "consider",
+   "absChange": 0.066,
+   "pctChange": 47.4,
+   "minsSincePrev": 55.5,
+   "bandMoved": false
+  }
+ ]
+}

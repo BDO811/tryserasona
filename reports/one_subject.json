@@ -1,0 +1,1190 @@
+[
+ {
+  "signals": [
+   {
+    "name": "metabolic-load",
+    "label": "Metabolic Load",
+    "score": 0.863541394355928,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3930232767437948,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dry-mouth",
+    "label": "Dry Mouth",
+    "score": 0.32765032304721114,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.31268640073043713,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "iron-deficiency",
+    "label": "Iron Deficiency",
+    "score": 0.18238726756292142,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.3442303852347732,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "capturedAt": 1788798391358,
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "summary": {
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review",
+   "flaggedCount": 6,
+   "totalSignals": 6
+  },
+  "model": "tide",
+  "createdAt": "2026-09-07T16:26:31.532Z",
+  "pathway": "LONGEVITY",
+  "_id": "dtKN9mTZJVu5xvRyulk7"
+ },
+ {
+  "createdAt": "2026-09-07T17:25:32.491Z",
+  "summary": {
+   "flaggedCount": 5,
+   "totalSignals": 6,
+   "recommendedAction": "review",
+   "overallLevel": "MODERATE"
+  },
+  "pathway": "MENTAL_HEALTH",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "model": "haven",
+  "capturedAt": 1788801932302,
+  "signals": [
+   {
+    "name": "hypervigilance",
+    "label": "Hypervigilance",
+    "score": 0.6059708785611264,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.45604352825199135,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.18315043808006282,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "attention-dysregulation",
+    "label": "Attention Dysregulation",
+    "score": 0.13918646835671242,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.1372375532770065,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.11666097215496307,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "_id": "Bi38SftAXBCrVMxgyzQB"
+ },
+ {
+  "model": "haven",
+  "pathway": "MENTAL_HEALTH",
+  "createdAt": "2026-09-07T18:20:59.677Z",
+  "summary": {
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review",
+   "totalSignals": 6,
+   "flaggedCount": 6
+  },
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.6620697174335242,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "hypervigilance",
+    "label": "Hypervigilance",
+    "score": 0.6367687727997167,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.6177070405211718,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.45836938407617334,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "attention-dysregulation",
+    "label": "Attention Dysregulation",
+    "score": 0.20520530853533084,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.13503561123299065,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "capturedAt": 1788805259418,
+  "_id": "Z0bGLjLJ1fXPO7Ymkerc"
+ },
+ {
+  "capturedAt": 1788805286289,
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.6620697174335242,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "hypervigilance",
+    "label": "Hypervigilance",
+    "score": 0.6367687727997167,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.6177070405211718,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.45836938407617334,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "attention-dysregulation",
+    "label": "Attention Dysregulation",
+    "score": 0.20520530853533084,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.13503561123299065,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "model": "haven",
+  "createdAt": "2026-09-07T18:21:26.587Z",
+  "summary": {
+   "recommendedAction": "review",
+   "overallLevel": "MODERATE",
+   "totalSignals": 6,
+   "flaggedCount": 6
+  },
+  "pathway": "MENTAL_HEALTH",
+  "_id": "jxw7VMh9ASSyTJg4Jboy"
+ },
+ {
+  "summary": {
+   "overallLevel": "MODERATE",
+   "flaggedCount": 5,
+   "recommendedAction": "review",
+   "totalSignals": 6
+  },
+  "capturedAt": 1788805361476,
+  "pathway": "LONGEVITY",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "createdAt": "2026-09-07T18:22:41.708Z",
+  "model": "tide",
+  "signals": [
+   {
+    "name": "metabolic-load",
+    "label": "Metabolic Load",
+    "score": 0.9182702950792707,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.3856124885961038,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.27981357824568415,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "dry-mouth",
+    "label": "Dry Mouth",
+    "score": 0.265024073530348,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.2526527226785621,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "iron-deficiency",
+    "label": "Iron Deficiency",
+    "score": 0.046173723537727404,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "_id": "mwiXGvjYSZj823ADo2nV"
+ },
+ {
+  "summary": {
+   "flaggedCount": 5,
+   "recommendedAction": "consider",
+   "totalSignals": 7,
+   "overallLevel": "MODERATE"
+  },
+  "capturedAt": 1788808310180,
+  "pathway": "SPORTS",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "createdAt": "2026-09-07T19:11:50.462Z",
+  "model": "apex",
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.27410875969031945,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.19548363817074216,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.13239523229489214,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.0932975161980678,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.08950556662602235,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.10986978604435846,
+    "level": "low",
+    "flagged": false
+   },
+   {
+    "name": "head-impact",
+    "label": "Head Impact",
+    "score": 0.06594538721890757,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "_id": "cgLaQYI47PowQC2j4vcm"
+ },
+ {
+  "createdAt": "2026-09-07T20:16:51.330Z",
+  "capturedAt": 1788812211068,
+  "signals": [
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3009021432733465,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.2001337211157728,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.14406226070508849,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.10529207741130518,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.13508957686979653,
+    "level": "low",
+    "flagged": false
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.08594158014513456,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "model": "pulse",
+  "summary": {
+   "overallLevel": "MODERATE",
+   "flaggedCount": 4,
+   "recommendedAction": "review",
+   "totalSignals": 6
+  },
+  "pathway": "WELLNESS",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "_id": "bXacTOGclN1QEAFINUXV"
+ },
+ {
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.20161270806832796,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.12596664492905094,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.07674119054298166,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.06375116117240506,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.07255863588492441,
+    "level": "low",
+    "flagged": false
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.03579317703480207,
+    "level": "none",
+    "flagged": false
+   },
+   {
+    "name": "head-impact",
+    "label": "Head Impact",
+    "score": 0.0032380701396712607,
+    "level": "none",
+    "flagged": false
+   }
+  ],
+  "model": "apex",
+  "createdAt": "2026-09-07T20:37:41.672Z",
+  "capturedAt": 1788813461404,
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "pathway": "SPORTS",
+  "summary": {
+   "overallLevel": "MODERATE",
+   "recommendedAction": "consider",
+   "flaggedCount": 4,
+   "totalSignals": 7
+  },
+  "_id": "91DHAanI57xO8lnoOs74"
+ },
+ {
+  "pathway": "WELLNESS",
+  "summary": {
+   "flaggedCount": 4,
+   "totalSignals": 6,
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review"
+  },
+  "model": "pulse",
+  "capturedAt": 1788816214217,
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "signals": [
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.3725703190716975,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.3913956016565852,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.245139782678034,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.09022402686703827,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.09197486462420468,
+    "level": "low",
+    "flagged": false
+   },
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.041619608523954466,
+    "level": "none",
+    "flagged": false
+   }
+  ],
+  "createdAt": "2026-09-07T21:23:34.435Z",
+  "_id": "25Mqb4CtS110onMDp21b"
+ },
+ {
+  "capturedAt": 1788888557107,
+  "model": "pulse",
+  "signals": [
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.5056009745755603,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.46572786902680263,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.35403420497165733,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3425743832847422,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.3093469323133375,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.21308789201467102,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "pathway": "WELLNESS",
+  "createdAt": "2026-09-08T17:29:17.341Z",
+  "summary": {
+   "overallLevel": "MODERATE",
+   "totalSignals": 6,
+   "flaggedCount": 6,
+   "recommendedAction": "review"
+  },
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "_id": "KEraEYLPdwptGzzyRNf2"
+ },
+ {
+  "userKey": "dca91bc72244591b3822753893516610c92b6a242547ad51c4e5354bc7fdd745",
+  "capturedAt": 1788890599638,
+  "summary": {
+   "totalSignals": 5,
+   "flaggedCount": 4,
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review"
+  },
+  "pathway": "WELLNESS",
+  "createdAt": "2026-09-08T18:03:19.894Z",
+  "model": "pulse",
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.4720692881371757,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.46435016504510973,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.29097949945637275,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.10761734205571233,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.11323311262475722,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "_id": "Xa52SHxY90HWX5mO18mr"
+ },
+ {
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.7324279235783208,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.5193523228201509,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "head-impact",
+    "label": "Head Impact",
+    "score": 0.4867696543662453,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.4453568695983296,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.38410037126952046,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.33566898145796925,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.2293999107140431,
+    "level": "moderate",
+    "flagged": true
+   }
+  ],
+  "model": "apex",
+  "capturedAt": 1788890811105,
+  "userKey": "dca91bc72244591b3822753893516610c92b6a242547ad51c4e5354bc7fdd745",
+  "pathway": "SPORTS",
+  "createdAt": "2026-09-08T18:06:51.268Z",
+  "summary": {
+   "totalSignals": 7,
+   "flaggedCount": 7,
+   "recommendedAction": "review",
+   "overallLevel": "MODERATE"
+  },
+  "_id": "anAxdo8MzmVV7U3q6AwC"
+ },
+ {
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.8687674983361262,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.4401996137810697,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.3424896016761361,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3371228301158659,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.25971869479050763,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.37406660273802594,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "model": "apex",
+  "capturedAt": 1788892127216,
+  "userKey": "5f3ad79e74a989aa33b63986bd070c6ea309a241c42c11303138ccc2b6cb4ad0",
+  "pathway": "SPORTS",
+  "summary": {
+   "totalSignals": 6,
+   "recommendedAction": "review",
+   "flaggedCount": 6,
+   "overallLevel": "MODERATE"
+  },
+  "createdAt": "2026-09-08T18:28:47.400Z",
+  "_id": "MCEUlJx0MdRs88vhF9ME"
+ },
+ {
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.8687674983361262,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.4401996137810697,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.3424896016761361,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3371228301158659,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.25971869479050763,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.37406660273802594,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "capturedAt": 1788892207685,
+  "createdAt": "2026-09-08T18:30:07.860Z",
+  "model": "apex",
+  "userKey": "5f3ad79e74a989aa33b63986bd070c6ea309a241c42c11303138ccc2b6cb4ad0",
+  "pathway": "SPORTS",
+  "summary": {
+   "flaggedCount": 6,
+   "totalSignals": 6,
+   "recommendedAction": "review",
+   "overallLevel": "MODERATE"
+  },
+  "_id": "HueLSY3MGtNUSnsihDRE"
+ },
+ {
+  "pathway": "SPORTS",
+  "model": "apex",
+  "capturedAt": 1788892287953,
+  "summary": {
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review",
+   "totalSignals": 6,
+   "flaggedCount": 5
+  },
+  "userKey": "5f3ad79e74a989aa33b63986bd070c6ea309a241c42c11303138ccc2b6cb4ad0",
+  "createdAt": "2026-09-08T18:31:28.093Z",
+  "signals": [
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.7529066471117688,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.44687545143861135,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.39875617117698176,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.42786350649294963,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.22699898796978285,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.07622791935845123,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "_id": "o50F2iMcn7VFN7ND58mD"
+ },
+ {
+  "model": "apex",
+  "capturedAt": 1788892748360,
+  "signals": [
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.540086775585995,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.36916733082803044,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.2729143714292237,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.3591599439293065,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.12776560544503424,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.1008435637764834,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "summary": {
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review",
+   "flaggedCount": 6,
+   "totalSignals": 6
+  },
+  "pathway": "SPORTS",
+  "createdAt": "2026-09-08T18:39:08.693Z",
+  "_id": "bshUHjUUIJ4zLPYhnFce"
+ },
+ {
+  "signals": [
+   {
+    "name": "head-impact",
+    "label": "Head Impact",
+    "score": 0.1624849023531967,
+    "level": "low",
+    "flagged": false
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.22152249034021587,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.2988264555530172,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3644679666765187,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.1052028184254612,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.1638822628938728,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.25303776027375935,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "model": "apex",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "capturedAt": 1788916787961,
+  "summary": {
+   "totalSignals": 7,
+   "recommendedAction": "review",
+   "flaggedCount": 6,
+   "overallLevel": "MODERATE"
+  },
+  "createdAt": "2026-09-09T01:19:48.231Z",
+  "pathway": "SPORTS",
+  "_id": "CicSkl3FfjwtCkImXWFH"
+ },
+ {
+  "pathway": "WELLNESS",
+  "model": "pulse",
+  "summary": {
+   "flaggedCount": 5,
+   "totalSignals": 6,
+   "overallLevel": "MODERATE",
+   "recommendedAction": "review"
+  },
+  "createdAt": "2026-09-09T01:27:06.617Z",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "signals": [
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.4471547024289678,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.3538379963445263,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.08172165605061328,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.6778964121071812,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.19459379145194944,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.30807176250400076,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "capturedAt": 1788917226270,
+  "_id": "1BNs64eTka53ZiojmTC4"
+ },
+ {
+  "createdAt": "2026-09-09T15:41:17.683Z",
+  "signals": [
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.42955393814213566,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.47987181170956067,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3434745420628558,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "mood-disruption",
+    "label": "Mood Disruption",
+    "score": 0.587954077800149,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.6929234015170481,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "elevated-blood-pressure",
+    "label": "Elevated Blood Pressure",
+    "score": 0.3405253570712658,
+    "level": "consider",
+    "flagged": true
+   }
+  ],
+  "summary": {
+   "flaggedCount": 5,
+   "recommendedAction": "review",
+   "totalSignals": 6,
+   "overallLevel": "MODERATE"
+  },
+  "pathway": "WELLNESS",
+  "model": "pulse",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "capturedAt": 1788968477478,
+  "_id": "swROwb8OEAnynkS14s28"
+ },
+ {
+  "createdAt": "2026-09-09T15:46:17.132Z",
+  "userKey": "bd627440dbf0c321bce2fbc6b9e2a9db6ccfd690e61d6921363980fe4303026d",
+  "summary": {
+   "recommendedAction": "review",
+   "totalSignals": 7,
+   "flaggedCount": 5,
+   "overallLevel": "MODERATE"
+  },
+  "capturedAt": 1788968776866,
+  "pathway": "SPORTS",
+  "signals": [
+   {
+    "name": "head-impact",
+    "label": "Head Impact",
+    "score": 0.05072661439304938,
+    "level": "none",
+    "flagged": false
+   },
+   {
+    "name": "cognitive-load",
+    "label": "Cognitive Load",
+    "score": 0.2123890158540585,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "fatigue",
+    "label": "Fatigue",
+    "score": 0.12143569341007165,
+    "level": "consider",
+    "flagged": true
+   },
+   {
+    "name": "dehydration",
+    "label": "Dehydration",
+    "score": 0.3321069521837903,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "stress",
+    "label": "Stress",
+    "score": 0.3716873781594705,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "anxiety",
+    "label": "Anxiety",
+    "score": 0.5397318330807088,
+    "level": "moderate",
+    "flagged": true
+   },
+   {
+    "name": "cardiovascular-strain",
+    "label": "Cardiovascular Strain",
+    "score": 0.22058069180597456,
+    "level": "low",
+    "flagged": false
+   }
+  ],
+  "model": "apex",
+  "_id": "aDSQTtcVbqdoEjMK7eRA"
+ }
+]
