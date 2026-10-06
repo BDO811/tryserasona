@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1043.58 300" width="1043.58" height="300" role="img" aria-label="Swara">
+  <defs><clipPath id="swara-logo-box"><rect x="0" y="0" width="520" height="300"/></clipPath></defs>
+  <text x="0" y="213" font-family="Bricolage Grotesque, sans-serif" font-weight="650" font-size="175" letter-spacing="-0.02em" fill="#fbf7f1" xml:space="preserve">swara</text>
+  <g transform="translate(523.575 0)">
+  <g clip-path="url(#swara-logo-box)">
+    <rect x="72" y="16" width="320" height="44" rx="22" fill="#e0f0f3"/>
+    <rect x="72" y="72" width="448" height="44" rx="22" fill="#c2410c"/>
+    <rect x="72" y="128" width="392" height="44" rx="22" fill="#1b1510"/>
+    <rect x="72" y="184" width="448" height="44" rx="22" fill="#0d6a76"/>
+    <rect x="72" y="240" width="236" height="44" rx="22" fill="#7b2d5e"/>
+    <path d="M 72,-10 A 160,160 0 0 1 72,310" fill="none" stroke="#1b1510" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 72,-70 A 220,220 0 0 1 72,370" fill="none" stroke="#1b1510" stroke-width="8" stroke-linecap="round"/>
+    <path d="M 72,-130 A 280,280 0 0 1 72,430" fill="none" stroke="#1b1510" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  </g>
+</svg>

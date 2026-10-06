@@ -25,17 +25,15 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
       className="absolute inset-0 overflow-y-auto"
       style={{ backgroundColor: "#fbf7f1" }}
     >
-      {/* Top nav, matching tryswara.com chrome */}
+      {/* Top nav, matching tryswara.com chrome. The logo is the wordmark
+          plus the audio bands, one lockup, never the mark alone. */}
       <div className="sticky top-0 z-20 px-5 pt-4 md:px-10">
-        <div className="mx-auto flex max-w-[1100px] items-center justify-between px-2 py-3 md:px-4">
+        <div className="mx-auto flex max-w-[1100px] items-center px-2 py-3 md:px-4">
           <img
-            src={asset("brand/swara-signature-bands.svg")}
+            src={asset("brand/swara-logo-full.svg")}
             alt="Swara"
-            className="h-7 w-auto md:h-10"
+            className="h-6 w-auto md:h-8"
           />
-          <span className="font-mono text-xs tracking-[0.15em] uppercase text-[#c2410c] md:text-sm">
-            swara
-          </span>
         </div>
       </div>
 
@@ -126,14 +124,14 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
           ))}
         </motion.div>
 
-        {/* Brand signature: the design system's Cover band graphic, the standing
-            Swara mark for anywhere that needs more presence than the small icon. */}
+        {/* Brand signature: the audio bands alone, closing the page the way
+            they open it in the nav, this time without the wordmark. */}
         <motion.img
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          src={asset("brand/swara-signature-bands.svg")}
+          src={asset("brand/swara-logo-bands.svg")}
           alt=""
           aria-hidden="true"
           className="mt-20 h-16 w-auto max-w-full md:h-20"
