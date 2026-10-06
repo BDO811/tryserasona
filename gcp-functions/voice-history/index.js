@@ -1,5 +1,8 @@
 const crypto = require("crypto");
 const { Firestore, FieldValue } = require("@google-cloud/firestore");
+const admin = require("firebase-admin");
+
+if (!admin.apps.length) admin.initializeApp();
 
 /**
  * Per-user voice session history.
@@ -11,15 +14,24 @@ const { Firestore, FieldValue } = require("@google-cloud/firestore");
  * so the collection needs no public read/write rule and no API key ships in the
  * client bundle.
  *
- * Users are identified by a SHA-256 of their normalized email. The plaintext
- * address is deliberately NOT stored: lookup only ever needs the hash, and this
- * keeps a database of health readings from doubling as a mailing list. Lead
- * contact details are captured separately by the notifyLead function.
+ * Two identity modes, chosen per request:
  *
- * There is no authentication in front of this. Anyone who knows an email can
- * read that email's history, which is acceptable for a demo and is not
- * acceptable for production. Putting real users behind this needs a sign-in
- * step first.
+ *   Signed in  (Authorization: Bearer <Firebase ID token>) -> keyed on
+ *     "uid:<firebase uid>". The verified token is the only thing trusted; any
+ *     email in the body is ignored for identity purposes. This is the path a
+ *     Serasona account (see src/context/AuthContext.tsx) uses.
+ *
+ *   Anonymous  (no Authorization header) -> keyed on a SHA-256 of the
+ *     normalized email, exactly as before. This is the original try-it demo
+ *     flow (no account, no entitlement check) and is left completely
+ *     unchanged so the public anonymous funnel keeps working. The plaintext
+ *     address is deliberately NOT stored in this mode: lookup only ever needs
+ *     the hash, which keeps a database of health readings from doubling as a
+ *     mailing list.
+ *
+ * The anonymous mode's own limitation stands as before: anyone who knows an
+ * email can read that email's history. That is acceptable for a demo and is
+ * why the signed-in mode exists for anything that should actually be private.
  */
 
 const COLLECTION = "voiceSessions";
@@ -44,7 +56,7 @@ function getCorsOrigin(requestOrigin) {
 function setCorsHeaders(req, res) {
   res.set("Access-Control-Allow-Origin", getCorsOrigin(req.headers.origin));
   res.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
 }
 
 /** Lowercase and trim, so "Amit@X.com " and "amit@x.com" are the same user. */
@@ -58,8 +70,33 @@ function normalizeEmail(value) {
   return email;
 }
 
-function userKeyFor(email) {
+function userKeyForEmail(email) {
   return crypto.createHash("sha256").update(email).digest("hex");
+}
+
+/**
+ * Figures out whose history this request is touching. A present, valid
+ * Authorization header always wins — an authenticated caller cannot be
+ * downgraded to the anonymous email path by also sending an email field.
+ * Returns null when neither a valid token nor a valid email was supplied.
+ */
+async function resolveIdentity(req, emailValue) {
+  const authHeader = req.headers.authorization || "";
+  const idToken = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : null;
+
+  if (idToken) {
+    try {
+      const decoded = await admin.auth().verifyIdToken(idToken);
+      return { userKey: `uid:${decoded.uid}`, mode: "account" };
+    } catch (error) {
+      console.warn("[voice-history] ID token verification failed:", error.message);
+      return null;
+    }
+  }
+
+  const email = normalizeEmail(emailValue);
+  if (!email) return null;
+  return { userKey: userKeyForEmail(email), mode: "anonymous" };
 }
 
 /** Clamp a model score into 0-1, rejecting anything non-numeric. */
@@ -138,9 +175,9 @@ async function handleSave(req, res) {
     return;
   }
 
-  const email = normalizeEmail(body.email);
-  if (!email) {
-    res.status(400).json({ error: "A valid email is required." });
+  const identity = await resolveIdentity(req, body.email);
+  if (!identity) {
+    res.status(401).json({ error: "Sign in, or provide a valid email." });
     return;
   }
 
@@ -151,7 +188,7 @@ async function handleSave(req, res) {
   }
 
   const session = {
-    userKey: userKeyFor(email),
+    userKey: identity.userKey,
     model: cleanString(body.model, 32),
     pathway: cleanString(body.pathway, 32),
     capturedAt: resolveCapturedAt(body.capturedAt),
@@ -167,9 +204,9 @@ async function handleSave(req, res) {
 }
 
 async function handleFetch(req, res) {
-  const email = normalizeEmail(req.query && req.query.email);
-  if (!email) {
-    res.status(400).json({ error: "A valid email is required." });
+  const identity = await resolveIdentity(req, req.query && req.query.email);
+  if (!identity) {
+    res.status(401).json({ error: "Sign in, or provide a valid email." });
     return;
   }
 
@@ -177,7 +214,7 @@ async function handleFetch(req, res) {
   // would need a composite index provisioned before the endpoint works at all.
   const snapshot = await firestore
     .collection(COLLECTION)
-    .where("userKey", "==", userKeyFor(email))
+    .where("userKey", "==", identity.userKey)
     .limit(MAX_SESSIONS_RETURNED)
     .get();
 

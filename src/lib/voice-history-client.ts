@@ -35,6 +35,7 @@ export interface StoredSession {
 }
 
 export interface SessionToSave {
+  /** Ignored by the server when idToken is supplied; required otherwise. */
   email: string;
   model?: string | null;
   pathway?: string | null;
@@ -61,13 +62,16 @@ export interface SessionToSave {
  * to the report, and a Firestore outage should never stop a user seeing the
  * results they just recorded.
  */
-export async function saveSession(session: SessionToSave): Promise<boolean> {
-  if (!session.email) return false;
+export async function saveSession(session: SessionToSave, idToken?: string | null): Promise<boolean> {
+  if (!idToken && !session.email) return false;
 
   try {
     const response = await fetch(VOICE_HISTORY_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        ...(idToken ? { Authorization: `Bearer ${idToken}` } : {}),
+      },
       body: JSON.stringify({ capturedAt: Date.now(), ...session }),
     });
     if (!response.ok) {
@@ -81,12 +85,19 @@ export async function saveSession(session: SessionToSave): Promise<boolean> {
   }
 }
 
-/** Fetch a user's stored sessions, oldest first. Empty array on failure. */
-export async function fetchHistory(email: string): Promise<StoredSession[]> {
-  if (!email) return [];
+/**
+ * Fetch a user's stored sessions, oldest first. Empty array on failure.
+ * Pass idToken for a signed-in account; otherwise falls back to the email,
+ * exactly as before.
+ */
+export async function fetchHistory(email: string, idToken?: string | null): Promise<StoredSession[]> {
+  if (!idToken && !email) return [];
 
   try {
-    const response = await fetch(`${VOICE_HISTORY_URL}?email=${encodeURIComponent(email)}`);
+    const url = idToken ? VOICE_HISTORY_URL : `${VOICE_HISTORY_URL}?email=${encodeURIComponent(email)}`;
+    const response = await fetch(url, {
+      headers: idToken ? { Authorization: `Bearer ${idToken}` } : {},
+    });
     if (!response.ok) {
       console.warn(`[voice-history] Fetch failed with status ${response.status}`);
       return [];

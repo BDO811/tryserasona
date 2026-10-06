@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ChevronLeft } from "lucide-react";
 import { useAssessment } from "@/context/AssessmentContext";
+import { useAuth } from "@/context/AuthContext";
 import { useVoiceHistory } from "@/hooks/use-voice-history";
 import { LongitudinalChart } from "@/components/report/LongitudinalChart";
 import { formatSigned } from "@/lib/longitudinal";
@@ -18,9 +19,15 @@ const GREEN = "#0d6a76";
 const LongitudinalView = () => {
   const navigate = useNavigate();
   const { userProfile } = useAssessment();
+  const { user, isEntitled } = useAuth();
   const { loading, sessions, signals } = useVoiceHistory();
 
   const email = userProfile.email?.trim() || "";
+  // A signed-in free-tier account has an identity (its uid) but the pricing
+  // page promises it no trend — gate on entitlement before even asking
+  // whether there is a baseline to show. Anonymous visitors (no account) are
+  // untouched: the original demo keeps working on email alone.
+  const needsUpgrade = Boolean(user) && !isEntitled("core");
 
   return (
     <div className="min-h-screen w-full" style={{ backgroundColor: "#fbf7f1" }}>
@@ -43,7 +50,24 @@ const LongitudinalView = () => {
           present, not how severe it is, and none of this is a diagnosis.
         </p>
 
-        {!email ? (
+        {needsUpgrade ? (
+          <div className="rounded-lg px-5 py-6" style={{ backgroundColor: "rgba(0,0,0,0.06)" }}>
+            <h2 className="mb-1.5 font-mono text-xs uppercase tracking-[0.18em]" style={{ color: "#1b1510" }}>
+              Upgrade to see your trend
+            </h2>
+            <p className="mb-4 font-mono text-[11px] leading-relaxed" style={{ color: "#574b3f" }}>
+              Core and above compare every check-in to your own 30-day baseline. Free shows a single
+              reading only, with no history kept.
+            </p>
+            <Link
+              to="/pricing"
+              className="inline-flex items-center font-mono text-[11px] uppercase tracking-[0.18em] underline underline-offset-4"
+              style={{ color: "#1b1510" }}
+            >
+              See plans
+            </Link>
+          </div>
+        ) : !email && !user ? (
           <EmptyState
             headline="No email on this session"
             body="History is kept per person, keyed on the email entered at the start of a screening. Run a screening with an email to start a history."

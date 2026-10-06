@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useAssessment } from "@/context/AssessmentContext";
+import { useAuth } from "@/context/AuthContext";
 import { analyzeSignalHistory, changeSinceLastVisit, type LongitudinalRead } from "@/lib/longitudinal";
 import {
   fetchHistory,
@@ -40,17 +41,24 @@ const EMPTY: VoiceHistoryState = {
  * the session the user just recorded. It runs at most once per result: a
  * re-render, or a trip to the detailed view and back, must not write a
  * duplicate session and skew the user's own baseline.
+ *
+ * Identity is whichever of these is available, in this order: a signed-in
+ * Serasona account (uid, via Firebase), or the email entered in triage
+ * (anonymous demo, unchanged from before accounts existed). A signed-in user
+ * is never identified by email here — see gcp-functions/voice-history for why.
  */
 export function useVoiceHistory({ save = false }: { save?: boolean } = {}): VoiceHistoryState {
   const { userProfile, visualizedResult, pathway } = useAssessment();
+  const { user } = useAuth();
   const email = userProfile.email?.trim() || "";
   const jobId = visualizedResult?.jobId || "";
+  const identityKey = user?.uid || email;
 
   const [state, setState] = useState<VoiceHistoryState>(EMPTY);
   const savedJobIds = useRef<Set<string>>(new Set());
 
   useEffect(() => {
-    if (!email) {
+    if (!identityKey) {
       setState(EMPTY);
       return;
     }
@@ -59,6 +67,8 @@ export function useVoiceHistory({ save = false }: { save?: boolean } = {}): Voic
     setState((prev) => ({ ...prev, loading: true }));
 
     const run = async () => {
+      const idToken = user ? await user.getIdToken() : null;
+
       // Count prior sessions before writing this one, so "returning member"
       // means they had history already rather than that they have any at all.
       let priorSessionCount = 0;
@@ -68,23 +78,26 @@ export function useVoiceHistory({ save = false }: { save?: boolean } = {}): Voic
 
       if (shouldSave) {
         savedJobIds.current.add(jobId);
-        const existing = await fetchHistory(email);
+        const existing = await fetchHistory(email, idToken);
         priorSessionCount = existing.length;
-        await saveSession({
-          email,
-          model: visualizedResult.modelName ?? null,
-          pathway: pathway ?? null,
-          signals: visualizedResult.signals!,
-          summary: {
-            overallLevel: visualizedResult.likelihoodTier ?? null,
-            recommendedAction: visualizedResult.recommendedAction ?? null,
-            flaggedCount: visualizedResult.flaggedCount ?? null,
-            totalSignals: visualizedResult.totalSignals ?? null,
+        await saveSession(
+          {
+            email,
+            model: visualizedResult.modelName ?? null,
+            pathway: pathway ?? null,
+            signals: visualizedResult.signals!,
+            summary: {
+              overallLevel: visualizedResult.likelihoodTier ?? null,
+              recommendedAction: visualizedResult.recommendedAction ?? null,
+              flaggedCount: visualizedResult.flaggedCount ?? null,
+              totalSignals: visualizedResult.totalSignals ?? null,
+            },
           },
-        });
+          idToken
+        );
       }
 
-      const sessions = await fetchHistory(email);
+      const sessions = await fetchHistory(email, idToken);
       if (cancelled) return;
 
       const signals: SignalHistory[] = toSignalSeries(sessions)
@@ -122,7 +135,7 @@ export function useVoiceHistory({ save = false }: { save?: boolean } = {}): Voic
     // visualizedResult is intentionally not a dependency: it is a new object on
     // every render, and jobId already identifies the result that matters here.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [email, jobId, save, pathway]);
+  }, [identityKey, email, jobId, save, pathway]);
 
   return state;
 }
