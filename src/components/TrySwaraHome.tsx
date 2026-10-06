@@ -28,22 +28,10 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
       {/* Top nav, matching tryswara.com chrome */}
       <div className="sticky top-0 z-20 px-5 pt-4 md:px-10">
         <div className="mx-auto flex max-w-[1100px] items-center justify-between px-2 py-3 md:px-4">
-          <div
-            role="img"
-            aria-label="Swara"
-            className="h-7 md:h-10"
-            style={{
-              aspectRatio: "3.66 / 1",
-              backgroundColor: "#c2410c",
-              WebkitMaskImage: `url(${asset("brand/swara-mark-ink.svg")})`,
-              WebkitMaskSize: "contain",
-              WebkitMaskRepeat: "no-repeat",
-              WebkitMaskPosition: "left center",
-              maskImage: `url(${asset("brand/swara-mark-ink.svg")})`,
-              maskSize: "contain",
-              maskRepeat: "no-repeat",
-              maskPosition: "left center",
-            }}
+          <img
+            src={asset("brand/swara-signature-bands.svg")}
+            alt="Swara"
+            className="h-7 w-auto md:h-10"
           />
           <span className="font-mono text-xs tracking-[0.15em] uppercase text-[#c2410c] md:text-sm">
             swara
