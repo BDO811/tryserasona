@@ -13,7 +13,7 @@ const PLAN_LABEL: Record<string, string> = {
 };
 
 const Account = () => {
-  const { user, subscription, logOut } = useAuth();
+  const { user, subscription, isEntitled, logOut } = useAuth();
   const navigate = useNavigate();
   const [openingPortal, setOpeningPortal] = useState(false);
 
@@ -38,6 +38,23 @@ const Account = () => {
     <div className="min-h-screen bg-background px-6 py-16">
       <div className="max-w-md mx-auto space-y-8">
         <h1 className="font-serif text-3xl text-foreground">Account</h1>
+
+        {isEntitled("core") && (
+          <div className="rounded-2xl border border-primary bg-card p-6 space-y-3">
+            <div>
+              <p className="text-xs font-mono uppercase tracking-wider text-primary">Today</p>
+              <p className="text-foreground">Twenty seconds is all it takes.</p>
+            </div>
+            <div className="flex gap-3">
+              <Button asChild className="flex-1">
+                <Link to="/checkin">Check in now</Link>
+              </Button>
+              <Button asChild variant="outline" className="flex-1">
+                <Link to="/history">See my trend</Link>
+              </Button>
+            </div>
+          </div>
+        )}
 
         <div className="rounded-2xl border border-border bg-card p-6 space-y-1">
           <p className="text-xs font-mono uppercase tracking-wider text-muted-foreground">Signed in as</p>

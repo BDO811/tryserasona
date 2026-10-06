@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ParticleOrb } from "@/components/ParticleOrb";
 import { QuestionFlowVisualizer } from "@/components/QuestionFlowVisualizer";
 import { AnalysisAnimation, ArchetypeData } from "@/components/AnalysisAnimation";
@@ -8,16 +9,42 @@ import { LanguageSelector } from "@/components/LanguageSelector";
 import { SerasonaHome } from "@/components/SerasonaHome";
 import { NavigationOverlay } from "@/components/NavigationOverlay";
 import { AnalysisFailed } from "@/pages/AnalysisFailed";
-import { useAssessment, HEALTH_FOCUS_TO_PATHWAY } from "@/context/AssessmentContext";
+import { useAssessment, HEALTH_FOCUS_TO_PATHWAY, type AssessmentPathway } from "@/context/AssessmentContext";
 
 type AppState = "home" | "language" | "triage" | "attract" | "capture" | "analysis" | "reveal" | "failed";
 
-const Index = () => {
+interface IndexProps {
+  /** Screen to open on. Defaults to the marketing home for the public demo. */
+  initialState?: AppState;
+  /**
+   * Preselects a pathway and skips straight to recording, bypassing triage
+   * entirely. Used by the signed-in `/checkin` entry point — an account
+   * already has consent and an identity, so there is nothing left for triage
+   * to collect.
+   */
+  presetPathway?: NonNullable<AssessmentPathway>;
+  /** Where "done" and "start over" go instead of the marketing home. */
+  exitTo?: string;
+}
+
+const Index = ({ initialState = "home", presetPathway, exitTo }: IndexProps = {}) => {
+  const navigate = useNavigate();
   const { pathway, isFastTrack, setPathway, setUserProfile, reset: resetAssessment, audioBlob, setApiStatus, setApiResult, apiStatus, visualizedResult, selectedArchetype, setSelectedArchetype } = useAssessment();
-  const [appState, setAppState] = useState<AppState>("home");
+  const [appState, setAppState] = useState<AppState>(initialState);
   const [triageStep, setTriageStep] = useState(1);
   const [externalTriageStep, setExternalTriageStep] = useState<number | undefined>(undefined);
   const [triageKey, setTriageKey] = useState(0);
+
+  // Runs once: stands in for the triage step a preset entry point skips.
+  // Consent is already on file from signup (see Signup.tsx), so there is
+  // nothing to collect here beyond the pathway itself.
+  useEffect(() => {
+    if (presetPathway && pathway !== presetPathway) {
+      setPathway(presetPathway);
+      setUserProfile({ consentGiven: true });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (apiStatus === "failed" && appState === "capture") {
@@ -79,8 +106,12 @@ const Index = () => {
     setExternalTriageStep(undefined);
     setTriageKey(prev => prev + 1);
     resetAssessment();
+    if (exitTo) {
+      navigate(exitTo);
+      return;
+    }
     setAppState("home");
-  }, [resetAssessment, setSelectedArchetype]);
+  }, [resetAssessment, setSelectedArchetype, exitTo, navigate]);
 
   const handleRestartCapture = useCallback(() => {
     setApiStatus(null);
@@ -102,8 +133,12 @@ const Index = () => {
     setExternalTriageStep(1);
     setTriageKey(prev => prev + 1);
     resetAssessment();
+    if (exitTo) {
+      navigate(exitTo);
+      return;
+    }
     setAppState("home");
-  }, [resetAssessment, setSelectedArchetype]);
+  }, [resetAssessment, setSelectedArchetype, exitTo, navigate]);
 
   const handleTriageStepChange = useCallback((step: number) => {
     setTriageStep(step);
