@@ -1,0 +1,13 @@
+{
+  "name": "create-portal-session",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "stripe": "^17.3.0"
+  }
+}
