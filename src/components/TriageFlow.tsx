@@ -269,9 +269,9 @@ export const TriageFlow = ({ onComplete, onStepChange, externalStep }: TriageFlo
       >
         {/* Chrome Headers */}
         <div className="flex items-center justify-between mb-2">
-          <img src={asset("brand/swara-mark-paper.svg")} alt="Swara" className="h-5 w-auto" />
+          <img src={asset("brand/serasona-mark-paper.svg")} alt="Serasona" className="h-5 w-auto" />
           <span className="font-mono text-xs tracking-[0.2em] uppercase text-[#fbf7f1]/85">
-            SWARA // 2026
+            SERASONA // 2026
           </span>
         </div>
 

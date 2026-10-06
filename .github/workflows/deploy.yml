@@ -32,7 +32,7 @@ jobs:
 
       - run: npx vitest run
 
-      # Served from the domain root at tryswara.com. public/CNAME
+      # Served from the domain root at tryserasona.com. public/CNAME
       # carries the custom domain into dist so each deploy keeps it.
       - run: npm run build
 

@@ -455,7 +455,7 @@ const DetailedAnalysisView = () => {
                 </span>
                 <span className="text-[#574b3f]/50">|</span>
                 <span className="text-[#6f6254]">
-                  Model: <span className="text-[#1b1510] font-medium">SWARA-2.0</span>
+                  Model: <span className="text-[#1b1510] font-medium">SERASONA-2.0</span>
                 </span>
               </div>
               {/* Second Row: Job ID only */}

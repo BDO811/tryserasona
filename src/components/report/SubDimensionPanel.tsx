@@ -26,7 +26,7 @@ interface SubDimensionPanelProps {
  * at the unfavourable one. Indexed by the row's own band, not by screen
  * position, so it stays correct however the scale is ordered.
  *
- * Blue is Swara's hydration blue. It marks the favourable end as
+ * Blue is Serasona's hydration blue. It marks the favourable end as
  * better than ordinary rather than merely safe, which green alone could not do
  * once green moved to the middle.
  */

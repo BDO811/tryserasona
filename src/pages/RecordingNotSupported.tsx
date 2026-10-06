@@ -72,7 +72,7 @@ export const RecordingNotSupported = ({ onBack }: RecordingNotSupportedProps) =>
           transition={{ delay: 0.5 }}
         >
           {isPermission ? (
-            <>Swara needs permission to use your microphone to run the voice check-in.</>
+            <>Serasona needs permission to use your microphone to run the voice check-in.</>
           ) : (
             <>
               Voice capture requires <strong className="text-black/80">WebM with Opus</strong> at{" "}

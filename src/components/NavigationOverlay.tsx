@@ -71,13 +71,13 @@ export const NavigationOverlay = ({
             className="font-mono text-[10px] tracking-[0.2em] uppercase text-black/90 hidden md:block"
             style={{ textShadow: "0 1px 4px rgba(219,204,177,0.9), 0 0 8px rgba(219,204,177,0.7)" }}
           >
-            SWARA
+            SERASONA
           </span>
           <span
             className="font-mono text-[10px] tracking-[0.2em] uppercase text-black/90"
             style={{ textShadow: "0 1px 4px rgba(219,204,177,0.9), 0 0 8px rgba(219,204,177,0.7)" }}
           >
-            SWARA // 2026
+            SERASONA // 2026
           </span>
         </div>
       </div>

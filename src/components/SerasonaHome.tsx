@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { asset } from "@/lib/asset";
 
-interface TrySwaraHomeProps {
+interface SerasonaHomeProps {
   onComplete: () => void;
 }
 
@@ -19,19 +19,19 @@ const WAVEFORM_BARS = Array.from({ length: 48 }, (_, i) => {
   return Math.min(1, h);
 });
 
-export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
+export const SerasonaHome = ({ onComplete }: SerasonaHomeProps) => {
   return (
     <div
       className="absolute inset-0 overflow-y-auto"
       style={{ backgroundColor: "#fbf7f1" }}
     >
-      {/* Top nav, matching tryswara.com chrome. The logo is the wordmark
+      {/* Top nav, matching tryserasona.com chrome. The logo is the wordmark
           plus the audio bands, one lockup, never the mark alone. */}
       <div className="sticky top-0 z-20 px-5 pt-4 md:px-10">
         <div className="mx-auto flex max-w-[1100px] items-center px-2 py-3 md:px-4">
           <img
-            src={asset("brand/swara-logo-full.svg")}
-            alt="Swara"
+            src={asset("brand/serasona-logo-full.svg")}
+            alt="Serasona"
             className="h-6 w-auto md:h-8"
           />
         </div>
@@ -104,7 +104,7 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
           onClick={onComplete}
           className="mt-12 rounded-full bg-black px-10 py-5 font-mono text-sm font-medium uppercase tracking-[0.2em] text-[#fbf7f1] transition-colors hover:bg-black/[0.85]"
         >
-          Try Swara
+          Try Serasona
         </motion.button>
 
         {/* Stats row */}
@@ -131,7 +131,7 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          src={asset("brand/swara-logo-bands.svg")}
+          src={asset("brand/serasona-logo-bands.svg")}
           alt=""
           aria-hidden="true"
           className="mt-20 h-16 w-auto max-w-full md:h-20"
@@ -141,4 +141,4 @@ export const TrySwaraHome = ({ onComplete }: TrySwaraHomeProps) => {
   );
 };
 
-export default TrySwaraHome;
+export default SerasonaHome;

@@ -1,5 +1,5 @@
 /**
- * Internationalization (i18n) for the Swara Voice Check-in demo
+ * Internationalization (i18n) for the Serasona Voice Check-in demo
  * Supports: English, French, German, Hindi (Devanagari)
  */
 
@@ -31,16 +31,16 @@ const translations = {
 
   // Chrome headers
   amplifierHealth: {
-    en: "SWARA",
-    fr: "SWARA",
-    de: "SWARA",
-    hi: "SWARA",
+    en: "SERASONA",
+    fr: "SERASONA",
+    de: "SERASONA",
+    hi: "SERASONA",
   },
   sonaVersion: {
-    en: "SWARA // 2026",
-    fr: "SWARA // 2026",
-    de: "SWARA // 2026",
-    hi: "SWARA // 2026",
+    en: "SERASONA // 2026",
+    fr: "SERASONA // 2026",
+    de: "SERASONA // 2026",
+    hi: "SERASONA // 2026",
   },
 
   // Triage - Step 1

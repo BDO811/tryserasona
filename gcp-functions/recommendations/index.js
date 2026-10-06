@@ -67,6 +67,8 @@ const ALLOWED_ORIGINS = [
   "https://try.amplifierhealth.com",
   "https://tryswara.com",
   "https://www.tryswara.com",
+  "https://tryserasona.com",
+  "https://www.tryserasona.com",
   "http://localhost:8080",
   "http://localhost:5173",
 ];

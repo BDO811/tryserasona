@@ -306,7 +306,7 @@ const generateGrid = (count: number, size: number) => {
 
 // Each of the 6 stages gets its own color and its own particle-mark shape,
 // so the graphic reads as 6 distinct moments rather than one repeating loop.
-// These are deliberately dark and saturated: the screen sits on the Swara
+// These are deliberately dark and saturated: the screen sits on the Serasona
 // paper background #fbf7f1, and a mid-tone or bright hue (the old orange and
 // yellow especially) sank into that background instead of reading against it.
 const STAGE_COLORS = ["#c2410c", "#1d5fa8", "#7b2d5e", "#1b1510", "#a94e08", "#0d6a76"];
@@ -333,7 +333,7 @@ function hexToRgb(hex: string): Rgb {
 }
 
 /**
- * The Swara paper background #fbf7f1 is a light surface, so anything above
+ * The Serasona paper background #fbf7f1 is a light surface, so anything above
  * roughly 40% luminance stops reading as ink and starts blending in. The
  * archetype palette is neon by design (#00FF94, #FFB800), which is why the
  * final stage used to wash out. Scale any color down to that ceiling,

@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Swara">
-  <defs><clipPath id="swara-logo-box"><rect x="0" y="0" width="520" height="300"/></clipPath></defs>
-  <g clip-path="url(#swara-logo-box)">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 300" width="520" height="300" role="img" aria-label="Serasona">
+  <defs><clipPath id="serasona-logo-box"><rect x="0" y="0" width="520" height="300"/></clipPath></defs>
+  <g clip-path="url(#serasona-logo-box)">
     <rect x="72" y="16" width="320" height="44" rx="22" fill="#e0f0f3"/>
     <rect x="72" y="72" width="448" height="44" rx="22" fill="#c2410c"/>
     <rect x="72" y="128" width="392" height="44" rx="22" fill="#1b1510"/>

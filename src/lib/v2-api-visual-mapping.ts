@@ -253,7 +253,7 @@ const SIGN_COPY: Record<string, SignCopy> = {
 
 const DEFAULT_SIGN_COPY: SignCopy = {
   definition:
-    "A voice-derived signal produced by Swara's voice model from acoustic properties of the sample.",
+    "A voice-derived signal produced by Serasona's voice model from acoustic properties of the sample.",
   context: "Screening output. Interpret alongside clinical context, not on its own.",
 };
 

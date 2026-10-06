@@ -34,9 +34,9 @@ export const LanguageSelector = ({ onComplete }: LanguageSelectorProps) => {
       >
         {/* Chrome Headers */}
         <div className="flex items-center justify-between mb-8">
-          <img src={asset("brand/swara-mark-paper.svg")} alt="Swara" className="h-10 w-auto" />
+          <img src={asset("brand/serasona-mark-paper.svg")} alt="Serasona" className="h-10 w-auto" />
           <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#fbf7f1]/90">
-            SWARA // 2026
+            SERASONA // 2026
           </span>
         </div>
 
@@ -64,7 +64,7 @@ export const LanguageSelector = ({ onComplete }: LanguageSelectorProps) => {
 
         {/* Subtitle */}
         <p className="text-center font-mono text-[10px] text-[#fbf7f1]/40 mt-8 tracking-wider uppercase">
-          Swara · Voice Check-in
+          Serasona · Voice Check-in
         </p>
       </motion.div>
     </div>

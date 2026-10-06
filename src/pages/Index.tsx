@@ -5,7 +5,7 @@ import { AnalysisAnimation, ArchetypeData } from "@/components/AnalysisAnimation
 import { HealthProfile } from "@/components/HealthProfile";
 import { TriageFlow, TriageData } from "@/components/TriageFlow";
 import { LanguageSelector } from "@/components/LanguageSelector";
-import { TrySwaraHome } from "@/components/TrySwaraHome";
+import { SerasonaHome } from "@/components/SerasonaHome";
 import { NavigationOverlay } from "@/components/NavigationOverlay";
 import { AnalysisFailed } from "@/pages/AnalysisFailed";
 import { useAssessment, HEALTH_FOCUS_TO_PATHWAY } from "@/context/AssessmentContext";
@@ -141,7 +141,7 @@ const Index = () => {
           key="home"
           className="absolute inset-0 animate-screen-in"
         >
-          <TrySwaraHome onComplete={handleHomeComplete} />
+          <SerasonaHome onComplete={handleHomeComplete} />
         </div>
       )}
 

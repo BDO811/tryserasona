@@ -62,7 +62,7 @@ const LEVEL_TREATMENT: Record<SignalLevel, UiTreatment> = {
  * colour. Brand palette only, no lime.
  *
  * Two grounds: the dark data canvas, and the paper page. Every light value is
- * measured for contrast against the Swara paper surface, where the dark ramp
+ * measured for contrast against the Serasona paper surface, where the dark ramp
  * collapses — a bright caution tone has too little contrast there.
  */
 const TREATMENT_COLOR: Record<UiTreatment, { dark: string; light: string }> = {

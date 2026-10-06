@@ -27,7 +27,7 @@ interface SignalPanelProps {
  * probability, not a common one, so comparing it across rows invited a false
  * reading. See lib/signal-band.ts.
  */
-/** Swara's hydration blue #4a90c9. Dark rows only, which is all of these. */
+/** Serasona's hydration blue #4a90c9. Dark rows only, which is all of these. */
 const READOUT_BLUE = "#4a90c9";
 
 export const SignalPanel = ({
