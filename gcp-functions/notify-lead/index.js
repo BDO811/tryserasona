@@ -64,6 +64,15 @@ function setCorsHeaders(req, res) {
   res.set("Access-Control-Allow-Headers", "Content-Type");
 }
 
+// The same function backs several frontends, so the notification email's
+// subject names whichever brand the submission actually came from rather
+// than a single hardcoded name.
+function brandFromOrigin(requestOrigin) {
+  if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return "Serasona";
+  if (requestOrigin === "https://tryswara.com" || requestOrigin === "https://www.tryswara.com") return "Swara";
+  return "Sona-2";
+}
+
 function base64url(input) {
   return Buffer.from(input, "utf-8").toString("base64").replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
 }
@@ -131,7 +140,7 @@ async function getGmailAccessToken() {
 
 async function sendLeadEmail(lead) {
   const accessToken = await getGmailAccessToken();
-  const subject = `New Sona-2 demo submission: ${lead.fullName}`;
+  const subject = `New ${lead.brand || "Sona-2"} demo submission: ${lead.fullName}`;
   const body = [
     "New wellness demo submission.",
     "",
@@ -205,6 +214,7 @@ exports.notifyLead = async (req, res) => {
       ageRange: ageRange ?? null,
       language,
       consentGiven: true,
+      brand: brandFromOrigin(req.headers.origin),
     };
 
     const [firestoreResult, emailResult] = await Promise.allSettled([

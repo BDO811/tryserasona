@@ -47,7 +47,7 @@ async function getGmailAccessToken() {
 
 async function sendLeadEmail(lead) {
   const accessToken = await getGmailAccessToken();
-  const subject = `New Sona-2 demo submission: ${lead.fullName} (retried by sweep)`;
+  const subject = `New ${lead.brand || "Sona-2"} demo submission: ${lead.fullName} (retried by sweep)`;
   const body = [
     "New wellness demo submission. The original send failed; this copy came from the retry sweep.",
     "",
