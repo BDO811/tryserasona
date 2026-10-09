@@ -5,6 +5,31 @@ What's already wired in code (this pass): sign up / log in (`src/context/AuthCon
 (`gcp-functions/create-checkout-session`, `create-portal-session`, `stripe-webhook`). None of it can go live
 until the steps below are done — they need real accounts and credentials this session doesn't have.
 
+> **Billing is LIVE, 2026-10-08.** Stripe is in live mode on
+> `acct_1T9XYi0nqIp1IKiB` (Amplifier Health Inc, charges and payouts enabled).
+> Live products and prices exist at $29 / $49 / $149, the live webhook endpoint
+> is registered, the live customer portal is configured, and all three Cloud
+> Functions run on live credentials mounted from Secret Manager. Section 2
+> below is kept for reference; nothing in it is outstanding.
+>
+> Secrets, all in Secret Manager on `amits-playground-po`:
+> `stripe-secret-key-live`, `stripe-webhook-secret-live`, and the test pair
+> `stripe-secret-key-test` / `stripe-webhook-secret-test`.
+>
+> Live price ids (set as env vars on the functions, not in this repo):
+> core `price_1UOU1C0nqIp1IKiBpaC3whW4`,
+> plus `price_1UOU1D0nqIp1IKiBGYL67ncK`,
+> executive `price_1UOU1E0nqIp1IKiB87xrFSn7`.
+>
+> To go back to test mode, redeploy the three functions with the test price ids
+> and the `-test` secrets. `scripts/setup-stripe.mjs` is re-runnable against
+> either mode and will reuse what already exists rather than duplicating it.
+>
+> Worth hardening later: the functions use a full-access secret key. A
+> restricted key limited to customers, checkout sessions, billing portal
+> sessions and subscription reads would do the same job with a smaller blast
+> radius.
+
 > **Done, 2026-10-08.** Firebase is attached to `amits-playground-po`,
 > email/password sign-in is on, `tryserasona.com` / `serasona.com` / `localhost`
 > are authorized domains, the Firestore rules are deployed, and the deploy
