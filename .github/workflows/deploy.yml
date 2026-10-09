@@ -34,7 +34,19 @@ jobs:
 
       # Served from the domain root at tryserasona.com. public/CNAME
       # carries the custom domain into dist so each deploy keeps it.
+      # Firebase web config. Public client config, not secrets — Firebase
+      # identifies the project with these and enforces access with Security
+      # Rules and authorized domains, both of which are set on the project.
+      # They live here rather than in .env because .env is gitignored, and
+      # without them the built site ships with auth silently disabled.
       - run: npm run build
+        env:
+          VITE_FIREBASE_API_KEY: AIzaSyCKySJYqydO97YOJyllmvSC6rH3maIrUCg
+          VITE_FIREBASE_AUTH_DOMAIN: amits-playground-po.firebaseapp.com
+          VITE_FIREBASE_PROJECT_ID: amits-playground-po
+          VITE_FIREBASE_STORAGE_BUCKET: amits-playground-po.firebasestorage.app
+          VITE_FIREBASE_MESSAGING_SENDER_ID: "551580534721"
+          VITE_FIREBASE_APP_ID: 1:551580534721:web:ab936c018e263dd9201140
 
       # The app uses BrowserRouter, so /detailed-analysis and friends are
       # client-side routes with no file behind them. GitHub Pages serves

@@ -94,11 +94,20 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (!auth || !db) throw NOT_CONFIGURED_ERROR;
     const credential = await createUserWithEmailAndPassword(auth, email, password);
     await updateProfile(credential.user, { displayName: fullName });
+    // No `subscription` field. The Firestore rules forbid the client from
+    // writing one at all — that field is the entitlement, and it is only ever
+    // set by the stripe-webhook function through the Admin SDK. Writing it here
+    // (even as the harmless free/none default) made every signup fail the
+    // create rule: the auth user was created, this write was rejected, and the
+    // whole signUp threw, leaving an account that could log in but had no
+    // profile document and never reached the app.
+    //
+    // Its absence already means free/none — the snapshot listener above falls
+    // back to DEFAULT_SUBSCRIPTION when the field is missing.
     await setDoc(doc(db, "users", credential.user.uid), {
       email,
       fullName,
       createdAt: serverTimestamp(),
-      subscription: DEFAULT_SUBSCRIPTION,
     });
   }, []);
 
