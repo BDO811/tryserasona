@@ -5,6 +5,12 @@ What's already wired in code (this pass): sign up / log in (`src/context/AuthCon
 (`gcp-functions/create-checkout-session`, `create-portal-session`, `stripe-webhook`). None of it can go live
 until the steps below are done — they need real accounts and credentials this session doesn't have.
 
+> **Done, 2026-10-08.** Firebase is attached to `amits-playground-po`,
+> email/password sign-in is on, `tryserasona.com` / `serasona.com` / `localhost`
+> are authorized domains, the Firestore rules are deployed, and the deploy
+> workflow carries the web config. Section 1 below is kept for the record; its
+> diagnosis was wrong, see the correction immediately after it.
+
 ## 1. Firebase (accounts + the subscription record)
 
 Firestore itself is already active on `amits-playground-po` (it's what `notify-lead` writes
@@ -26,6 +32,40 @@ enabled. One of these should get past it:
 Once Firebase is attached to the project:
 
 - **Authentication → Sign-in method** → enable **Email/Password**.
+
+### Correction: it was not org policy
+
+The block above blamed an org policy on Firebase project creation. That was a
+misdiagnosis of two separate problems stacked on each other.
+
+1. **Application Default Credentials had no quota project.** Every call to
+   `firebase.googleapis.com` and `identitytoolkit.googleapis.com` came back
+   `403 PERMISSION_DENIED / SERVICE_DISABLED`, which reads like the API being
+   switched off at the org. Sending `x-goog-user-project: amits-playground-po`
+   turned the same calls into honest `404 NOT_FOUND` answers, i.e. "Firebase is
+   simply not attached yet".
+2. **The Firebase CLI's signed-in identity lacked one permission** on the
+   project: `serviceusage.services.enable`. `projects:addfirebase` failed with
+   an `IamPermissionDeniedException` naming it outright. Granting that identity
+   `roles/serviceusage.serviceUsageAdmin` and `roles/firebase.admin` — from the
+   project owner via gcloud — was the entire fix. It then attached first try.
+
+Worth knowing for next time: `gcloud auth print-access-token` yields a token
+without the `https://www.googleapis.com/auth/firebase` scope, and
+`firebase.googleapis.com` answers unscoped tokens with an **HTML 404** rather
+than a JSON permission error. Use the Firebase CLI for Firebase Management API
+calls; use gcloud for IAM.
+
+### What turning it on immediately broke
+
+Signup had never worked, and could not have. `AuthContext.signUp` wrote a
+`subscription` field onto the new user document, and the `allow create` rule in
+`firestore.rules` forbids exactly that field — it is the entitlement, and only
+the stripe-webhook may set it. So the auth user was created, the profile write
+was rejected, `signUp` threw, and the person was left able to log in with no
+profile document and no way into the app. Fixed by not writing the field; its
+absence already means free/none.
+
 - **Firestore Database** → confirm it's in Native mode (it already is, since `notify-lead` uses it).
 - Deploy the rules in this repo: `firebase deploy --only firestore:rules --project amits-playground-po`
 - **Project settings → General → Your apps** → register a Web app → copy the six config values into
