@@ -47,6 +47,11 @@ jobs:
           VITE_FIREBASE_STORAGE_BUCKET: amits-playground-po.firebasestorage.app
           VITE_FIREBASE_MESSAGING_SENDER_ID: "551580534721"
           VITE_FIREBASE_APP_ID: 1:551580534721:web:ab936c018e263dd9201140
+          # Billing endpoints. Public URLs; each function verifies the
+          # Firebase ID token itself. Without these the built site reports
+          # "Plans aren't open yet" no matter how healthy Stripe is.
+          VITE_CREATE_CHECKOUT_SESSION_URL: https://us-central1-amits-playground-po.cloudfunctions.net/createCheckoutSession
+          VITE_CREATE_PORTAL_SESSION_URL: https://us-central1-amits-playground-po.cloudfunctions.net/createPortalSession
 
       # The app uses BrowserRouter, so /detailed-analysis and friends are
       # client-side routes with no file behind them. GitHub Pages serves
