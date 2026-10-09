@@ -67,6 +67,9 @@ const ALLOWED_ORIGINS = [
   "https://try.amplifierhealth.com",
   "https://tryswara.com",
   "https://www.tryswara.com",
+  "https://serasona.com",
+  "https://www.serasona.com",
+  // Redirects to serasona.com; a redirected request keeps its original origin.
   "https://tryserasona.com",
   "https://www.tryserasona.com",
   "http://localhost:8080",

@@ -39,7 +39,51 @@ const MAX_SESSIONS_RETURNED = 200;
 const MAX_SIGNALS_PER_SESSION = 64;
 const MAX_BODY_BYTES = 64 * 1024;
 
+/**
+ * How many check-ins an account with no paid plan may ever store. Pricing sells
+ * the free tier as "one 20-second check-in, your seven signals, this time only,
+ * no history or trend", so the limit is one for the lifetime of the account,
+ * not one per day.
+ */
+const FREE_CHECKIN_LIMIT = 1;
+
+/** Plans ranked the way a subscriber would upgrade. Mirrors src/context/AuthContext.tsx. */
+const PLAN_RANK = { free: 0, core: 1, plus: 2, executive: 3 };
+const ACTIVE_STATUSES = new Set(["active", "trialing"]);
+
 const firestore = new Firestore();
+
+/**
+ * Whether this account may store an unlimited number of check-ins.
+ *
+ * Read from the user document, never from the request. The client already
+ * checks this to decide what to render, but a UI check is a courtesy: anyone
+ * can call this endpoint directly with a valid token and no browser involved.
+ * This is the copy that actually costs money if it is wrong, because every
+ * stored session is a model call that was already paid for.
+ *
+ * `subscription` on that document is written only by the stripe-webhook
+ * function via the Admin SDK — the Firestore rules forbid the client from
+ * touching it — so it is safe to trust here.
+ */
+async function hasUnlimitedCheckins(uid) {
+  const snap = await firestore.collection("users").doc(uid).get();
+  const subscription = snap.exists ? snap.data().subscription : null;
+  if (!subscription) return false;
+  if (!ACTIVE_STATUSES.has(subscription.status)) return false;
+  return (PLAN_RANK[subscription.planId] ?? 0) >= PLAN_RANK.core;
+}
+
+/** How many sessions this user already has. Capped, since we only compare to a small limit. */
+async function countSessions(userKey) {
+  const snapshot = await firestore
+    .collection(COLLECTION)
+    .where("userKey", "==", userKey)
+    .limit(FREE_CHECKIN_LIMIT + 1)
+    .count()
+    .get();
+  return snapshot.data().count;
+}
 
 function getCorsOrigin(requestOrigin) {
   const fallback = "https://try.amplifierhealth.com";
@@ -47,6 +91,9 @@ function getCorsOrigin(requestOrigin) {
   if (requestOrigin.endsWith(".amplifierhealth.com") && requestOrigin.startsWith("https://")) return requestOrigin;
   if (requestOrigin.endsWith(".lovable.app") && requestOrigin.startsWith("https://")) return requestOrigin;
   if (requestOrigin === "https://tryswara.com" || requestOrigin === "https://www.tryswara.com") return requestOrigin;
+  if (requestOrigin === "https://serasona.com" || requestOrigin === "https://www.serasona.com") return requestOrigin;
+  // tryserasona.com now redirects here, but a redirected request still
+  // preflights with its original origin, so it stays allowed.
   if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return requestOrigin;
   if (requestOrigin === "https://bdo811.github.io") return requestOrigin;
   if (/^https?:\/\/localhost(:\d+)?$/.test(requestOrigin)) return requestOrigin;
@@ -185,6 +232,31 @@ async function handleSave(req, res) {
   if (signals.length === 0) {
     res.status(400).json({ error: "At least one signal is required." });
     return;
+  }
+
+  // The free tier's one check-in, enforced here rather than only in the UI.
+  //
+  // Scoped to account mode on purpose. The anonymous email path belongs to the
+  // original try-it demo, which has no accounts and no entitlements, and
+  // limiting it would break that funnel. Serasona itself always sends a token:
+  // since the free check-in started requiring an account, there is no path
+  // through the Serasona client that reaches the anonymous branch.
+  if (identity.mode === "account") {
+    const uid = identity.userKey.slice("uid:".length);
+    if (!(await hasUnlimitedCheckins(uid))) {
+      const used = await countSessions(identity.userKey);
+      if (used >= FREE_CHECKIN_LIMIT) {
+        console.log(`[voice-history] Free limit reached for ${identity.userKey} (${used} stored)`);
+        // 402 rather than 403: the request is well-formed and the caller is
+        // who they say they are. What is missing is a plan.
+        res.status(402).json({
+          error: "Your free check-in has been used.",
+          code: "free_limit_reached",
+          limit: FREE_CHECKIN_LIMIT,
+        });
+        return;
+      }
+    }
   }
 
   const session = {

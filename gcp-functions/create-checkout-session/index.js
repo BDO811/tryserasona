@@ -14,8 +14,11 @@ const PLAN_PRICE_IDS = {
 };
 
 function getCorsOrigin(requestOrigin) {
-  const fallback = "https://tryserasona.com";
+  const fallback = "https://serasona.com";
   if (!requestOrigin) return fallback;
+  if (requestOrigin === "https://serasona.com" || requestOrigin === "https://www.serasona.com") return requestOrigin;
+  // tryserasona.com now redirects here, but a redirected request still
+  // preflights with its original origin, so it stays allowed.
   if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return requestOrigin;
   if (requestOrigin === "https://bdo811.github.io") return requestOrigin;
   if (/^https?:\/\/localhost(:\d+)?$/.test(requestOrigin)) return requestOrigin;
@@ -57,8 +60,8 @@ exports.createCheckoutSession = async (req, res) => {
     const priceId = planId ? PLAN_PRICE_IDS[planId] : null;
     if (!priceId) return res.status(400).json({ error: "Unknown plan." });
 
-    const successUrl = typeof req.body?.successUrl === "string" ? req.body.successUrl : "https://tryserasona.com/account";
-    const cancelUrl = typeof req.body?.cancelUrl === "string" ? req.body.cancelUrl : "https://tryserasona.com/pricing";
+    const successUrl = typeof req.body?.successUrl === "string" ? req.body.successUrl : "https://serasona.com/account";
+    const cancelUrl = typeof req.body?.cancelUrl === "string" ? req.body.cancelUrl : "https://serasona.com/pricing";
 
     const customerId = await getOrCreateStripeCustomer(decoded.uid, decoded.email);
 

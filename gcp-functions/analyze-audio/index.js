@@ -47,6 +47,9 @@ function getCorsOrigin(requestOrigin) {
   if (requestOrigin.endsWith(".amplifierhealth.com") && requestOrigin.startsWith("https://")) return requestOrigin;
   // Swara (tryswara.com) is a separate consumer brand built on this same API.
   if (requestOrigin === "https://tryswara.com" || requestOrigin === "https://www.tryswara.com") return requestOrigin;
+  if (requestOrigin === "https://serasona.com" || requestOrigin === "https://www.serasona.com") return requestOrigin;
+  // tryserasona.com now redirects here, but a redirected request still
+  // preflights with its original origin, so it stays allowed.
   if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return requestOrigin;
   // GitHub Pages host the app is served from while try.amplifierhealth.com DNS
   // is pending. Exact origin, not a wildcard — *.github.io is every GitHub user.

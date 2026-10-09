@@ -52,6 +52,9 @@ function getCorsOrigin(requestOrigin) {
   if (requestOrigin.endsWith(".lovable.app") && requestOrigin.startsWith("https://")) return requestOrigin;
   if (requestOrigin.endsWith(".amplifierhealth.com") && requestOrigin.startsWith("https://")) return requestOrigin;
   if (requestOrigin === "https://tryswara.com" || requestOrigin === "https://www.tryswara.com") return requestOrigin;
+  if (requestOrigin === "https://serasona.com" || requestOrigin === "https://www.serasona.com") return requestOrigin;
+  // tryserasona.com now redirects here, but a redirected request still
+  // preflights with its original origin, so it stays allowed.
   if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return requestOrigin;
   if (requestOrigin === "https://bdo811.github.io") return requestOrigin;
   if (/^https?:\/\/localhost(:\d+)?$/.test(requestOrigin)) return requestOrigin;
@@ -68,6 +71,7 @@ function setCorsHeaders(req, res) {
 // subject names whichever brand the submission actually came from rather
 // than a single hardcoded name.
 function brandFromOrigin(requestOrigin) {
+  if (requestOrigin === "https://serasona.com" || requestOrigin === "https://www.serasona.com") return "Serasona";
   if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return "Serasona";
   if (requestOrigin === "https://tryswara.com" || requestOrigin === "https://www.tryswara.com") return "Swara";
   return "Sona-2";

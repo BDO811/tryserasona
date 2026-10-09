@@ -6,8 +6,11 @@ if (!admin.apps.length) admin.initializeApp();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "");
 
 function getCorsOrigin(requestOrigin) {
-  const fallback = "https://tryserasona.com";
+  const fallback = "https://serasona.com";
   if (!requestOrigin) return fallback;
+  if (requestOrigin === "https://serasona.com" || requestOrigin === "https://www.serasona.com") return requestOrigin;
+  // tryserasona.com now redirects here, but a redirected request still
+  // preflights with its original origin, so it stays allowed.
   if (requestOrigin === "https://tryserasona.com" || requestOrigin === "https://www.tryserasona.com") return requestOrigin;
   if (requestOrigin === "https://bdo811.github.io") return requestOrigin;
   if (/^https?:\/\/localhost(:\d+)?$/.test(requestOrigin)) return requestOrigin;
@@ -35,7 +38,7 @@ exports.createPortalSession = async (req, res) => {
     const customerId = userSnap.data()?.subscription?.stripeCustomerId;
     if (!customerId) return res.status(400).json({ error: "No billing account yet." });
 
-    const returnUrl = typeof req.body?.returnUrl === "string" ? req.body.returnUrl : "https://tryserasona.com/account";
+    const returnUrl = typeof req.body?.returnUrl === "string" ? req.body.returnUrl : "https://serasona.com/account";
 
     const session = await stripe.billingPortal.sessions.create({
       customer: customerId,

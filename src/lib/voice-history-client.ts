@@ -75,6 +75,14 @@ export async function saveSession(session: SessionToSave, idToken?: string | nul
       body: JSON.stringify({ capturedAt: Date.now(), ...session }),
     });
     if (!response.ok) {
+      // 402 is the server refusing to store a second check-in on a free
+      // account. Not an outage and not worth a scary log line: the UI already
+      // routes free users to pricing after their one, and this is the backstop
+      // for anyone who got past that.
+      if (response.status === 402) {
+        console.info("[voice-history] Free check-in limit reached; result not stored.");
+        return false;
+      }
       console.warn(`[voice-history] Save failed with status ${response.status}`);
       return false;
     }
