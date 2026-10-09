@@ -19,6 +19,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Account from "./pages/Account";
 import Checkin from "./pages/Checkin";
+import ResetPassword from "./pages/ResetPassword";
+import CheckinByPhone from "./pages/CheckinByPhone";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +46,8 @@ const App = () => (
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              {/* Login has linked here since it was written; the route never existed. */}
+              <Route path="/reset-password" element={<ResetPassword />} />
               <Route
                 path="/account"
                 element={
@@ -60,11 +64,38 @@ const App = () => (
                   </ProtectedRoute>
                 }
               />
-              <Route path="/detailed-analysis" element={<DetailedAnalysisView />} />
+              {/* Plus and above. The page itself redirects to /pricing below that. */}
+              <Route
+                path="/checkin/phone"
+                element={
+                  <ProtectedRoute>
+                    <CheckinByPhone />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/detailed-analysis"
+                element={
+                  <ProtectedRoute>
+                    <DetailedAnalysisView />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/history" element={<LongitudinalView />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/api-debug" element={<ApiDebugView />} />
-              <Route path="/panel-preview" element={<PanelPreview />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <Dashboard />
+                  </ProtectedRoute>
+                }
+              />
+              {import.meta.env.DEV && (
+                <>
+                  <Route path="/api-debug" element={<ApiDebugView />} />
+                  <Route path="/panel-preview" element={<PanelPreview />} />
+                </>
+              )}
               <Route path="/analysis-failed" element={<AnalysisFailed onRestart={() => window.location.href = "/"} />} />
               <Route path="/recording-not-supported" element={<RecordingNotSupported onBack={() => window.location.href = "/"} />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

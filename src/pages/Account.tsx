@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useAuth } from "@/context/AuthContext";
 import { openBillingPortal } from "@/lib/billing-client";
 import { toast } from "sonner";
+import { SiteHeader } from "@/components/SiteHeader";
 
 const PLAN_LABEL: Record<string, string> = {
   free: "Free",
@@ -35,7 +36,9 @@ const Account = () => {
   const hasActivePlan = subscription.status === "active" || subscription.status === "trialing";
 
   return (
-    <div className="min-h-screen bg-background px-6 py-16">
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="px-6 py-16">
       <div className="max-w-md mx-auto space-y-8">
         <h1 className="font-serif text-3xl text-foreground">Account</h1>
 
@@ -53,6 +56,13 @@ const Account = () => {
                 <Link to="/history">See my trend</Link>
               </Button>
             </div>
+            {/* Plus is the tier that buys the phone check-in. Below it this
+                would just be a link to a redirect, so it is not shown at all. */}
+            {isEntitled("plus") && (
+              <Button asChild variant="ghost" className="w-full">
+                <Link to="/checkin/phone">Not at a screen? Check in by phone</Link>
+              </Button>
+            )}
           </div>
         )}
 
@@ -87,6 +97,7 @@ const Account = () => {
           Log out
         </Button>
       </div>
+    </div>
     </div>
   );
 };
