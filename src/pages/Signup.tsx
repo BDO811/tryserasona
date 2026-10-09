@@ -8,6 +8,7 @@ import { useAuth } from "@/context/AuthContext";
 import { startCheckout } from "@/lib/billing-client";
 import { toast } from "sonner";
 import type { PlanId } from "@/context/AuthContext";
+import { SiteHeader } from "@/components/SiteHeader";
 
 const Signup = () => {
   const { signUp } = useAuth();
@@ -16,6 +17,12 @@ const Signup = () => {
   // Carries the tier a visitor picked on /pricing through signup, so creating
   // an account and starting checkout is one flow instead of two.
   const selectedPlan = searchParams.get("plan") as PlanId | null;
+  // Where to land after the account exists. The marketing home sends people
+  // here to do a check-in, so dropping them on the dashboard instead loses the
+  // one thing they came to do. Only same-site paths are honoured: an absolute
+  // URL here would turn signup into an open redirect.
+  const nextParam = searchParams.get("next");
+  const nextPath = nextParam && /^\/[^/]/.test(nextParam) ? nextParam : "/dashboard";
 
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
@@ -36,7 +43,7 @@ const Signup = () => {
         await startCheckout(selectedPlan);
         return; // startCheckout redirects the browser to Stripe
       }
-      navigate("/dashboard", { replace: true });
+      navigate(nextPath, { replace: true });
     } catch (error) {
       toast.error("Couldn't create that account. Check your details and try again.");
       setSubmitting(false);
@@ -44,7 +51,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-6 py-16">
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="flex items-center justify-center px-6 py-16">
       <div className="w-full max-w-sm space-y-8">
         <div className="text-center space-y-2">
           <h1 className="font-serif text-3xl text-foreground">Create your account</h1>
@@ -101,11 +110,15 @@ const Signup = () => {
 
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
-          <Link to="/login" className="text-foreground underline underline-offset-4">
+          <Link
+            to={nextParam ? `/login?next=${encodeURIComponent(nextPath)}` : "/login"}
+            className="text-foreground underline underline-offset-4"
+          >
             Log in
           </Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };

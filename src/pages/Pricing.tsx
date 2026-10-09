@@ -7,6 +7,7 @@ import { useAuth } from "@/context/AuthContext";
 import { startCheckout } from "@/lib/billing-client";
 import { toast } from "sonner";
 import type { PlanId } from "@/context/AuthContext";
+import { SiteHeader } from "@/components/SiteHeader";
 
 interface Tier {
   id: PlanId;
@@ -88,7 +89,9 @@ const Pricing = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background px-6 py-16 md:py-24">
+    <div className="min-h-screen bg-background md:py-24">
+      <SiteHeader />
+      <div className="px-6 py-16">
       <div className="max-w-5xl mx-auto">
         <div className="text-center space-y-3 mb-12">
           <h1 className="font-serif text-4xl md:text-5xl text-foreground">Choose how you check in</h1>
@@ -99,8 +102,14 @@ const Pricing = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {TIERS.map((tier) => {
-            const isCurrentPlan =
-              tier.id === "free" ? subscription.status === "none" : subscription.planId === tier.id && subscription.status !== "none";
+            // A signed-out visitor has no plan at all, so the free tier must
+            // read as an invitation rather than "your current plan" — which
+            // also disabled the one button a new visitor is meant to press.
+            const isCurrentPlan = Boolean(user) && (
+              tier.id === "free"
+                ? subscription.status === "none"
+                : subscription.planId === tier.id && subscription.status !== "none"
+            );
             return (
               <div
                 key={tier.id}
@@ -146,6 +155,7 @@ const Pricing = () => {
           diagnose, treat, prevent or cure any condition.
         </p>
       </div>
+    </div>
     </div>
   );
 };

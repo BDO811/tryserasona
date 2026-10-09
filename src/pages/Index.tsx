@@ -10,6 +10,8 @@ import { SerasonaHome } from "@/components/SerasonaHome";
 import { NavigationOverlay } from "@/components/NavigationOverlay";
 import { AnalysisFailed } from "@/pages/AnalysisFailed";
 import { useAssessment, HEALTH_FOCUS_TO_PATHWAY, type AssessmentPathway } from "@/context/AssessmentContext";
+import { useAuth } from "@/context/AuthContext";
+import { isFirebaseConfigured } from "@/lib/firebase";
 
 type AppState = "home" | "language" | "triage" | "attract" | "capture" | "analysis" | "reveal" | "failed";
 
@@ -29,6 +31,7 @@ interface IndexProps {
 
 const Index = ({ initialState = "home", presetPathway, exitTo }: IndexProps = {}) => {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const { pathway, isFastTrack, setPathway, setUserProfile, reset: resetAssessment, audioBlob, setApiStatus, setApiResult, apiStatus, visualizedResult, selectedArchetype, setSelectedArchetype } = useAssessment();
   const [appState, setAppState] = useState<AppState>(initialState);
   const [triageStep, setTriageStep] = useState(1);
@@ -64,9 +67,26 @@ const Index = ({ initialState = "home", presetPathway, exitTo }: IndexProps = {}
     }
   }, [visualizedResult, selectedArchetype]);
 
+  // The free check-in requires an account too. Before accounts existed this
+  // walked straight into language -> triage -> capture for anyone, and triage
+  // collected the name, email and consent that an account now carries.
+  //
+  // So the marketing home no longer starts a recording. It starts a signup, and
+  // the account lands back on /checkin to do the thing they came for.
+  //
+  // Unless accounts are impossible. Firebase Auth is not attached to the
+  // project yet (docs/SETUP_BILLING.md — a previous attempt was refused by org
+  // policy), and demanding an account nobody can create would make the site
+  // unusable rather than gated. While that is true the anonymous flow stays,
+  // exactly as it is in production today. The gate turns itself on the moment
+  // real Firebase keys are filled in; nothing here needs changing again.
   const handleHomeComplete = useCallback(() => {
-    setAppState("language");
-  }, []);
+    if (!isFirebaseConfigured) {
+      setAppState("language");
+      return;
+    }
+    navigate(user ? "/checkin" : "/signup?next=/checkin");
+  }, [user, navigate]);
 
   const handleLanguageComplete = useCallback(() => {
     setAppState("triage");

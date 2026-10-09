@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { asset } from "@/lib/asset";
+import { SiteHeader } from "@/components/SiteHeader";
 
 interface SerasonaHomeProps {
   onComplete: () => void;
@@ -25,17 +26,7 @@ export const SerasonaHome = ({ onComplete }: SerasonaHomeProps) => {
       className="absolute inset-0 overflow-y-auto"
       style={{ backgroundColor: "#fbf7f1" }}
     >
-      {/* Top nav, matching tryserasona.com chrome. The logo is the wordmark
-          plus the audio bands, one lockup, never the mark alone. */}
-      <div className="sticky top-0 z-20 px-5 pt-4 md:px-10">
-        <div className="mx-auto flex max-w-[1100px] items-center px-2 py-3 md:px-4">
-          <img
-            src={asset("brand/serasona-logo-full.svg")}
-            alt="Serasona"
-            className="h-6 w-auto md:h-8"
-          />
-        </div>
-      </div>
+      <SiteHeader overlay />
 
       <div className="mx-auto flex max-w-[900px] flex-col items-center px-6 pb-24 pt-16 text-center md:pt-24">
         {/* Eyebrow */}

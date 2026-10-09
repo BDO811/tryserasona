@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "sonner";
+import { SiteHeader } from "@/components/SiteHeader";
 
 const Login = () => {
   const { logIn } = useAuth();
@@ -14,7 +15,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
-  const redirectTo = (location.state as { from?: string } | null)?.from ?? "/dashboard";
+  // Two ways to arrive with a destination: bounced here by ProtectedRoute
+  // (which puts it in location state), or sent from signup, which carries it as
+  // ?next so an existing user who clicked "Start" still lands on the check-in.
+  // Same-site paths only — an absolute URL would make this an open redirect.
+  const nextParam = new URLSearchParams(location.search).get("next");
+  const safeNext = nextParam && /^\/[^/]/.test(nextParam) ? nextParam : null;
+  const redirectTo =
+    (location.state as { from?: string } | null)?.from ?? safeNext ?? "/dashboard";
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -30,7 +38,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background px-6">
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <div className="flex items-center justify-center px-6">
       <div className="w-full max-w-sm space-y-8">
         <div className="text-center space-y-2">
           <h1 className="font-serif text-3xl text-foreground">Welcome back</h1>
@@ -72,11 +82,15 @@ const Login = () => {
 
         <p className="text-center text-sm text-muted-foreground">
           New to Serasona?{" "}
-          <Link to="/signup" className="text-foreground underline underline-offset-4">
+          <Link
+            to={safeNext ? `/signup?next=${encodeURIComponent(safeNext)}` : "/signup"}
+            className="text-foreground underline underline-offset-4"
+          >
             Create an account
           </Link>
         </p>
       </div>
+    </div>
     </div>
   );
 };
